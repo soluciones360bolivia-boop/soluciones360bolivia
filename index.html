@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones 360° | Bolivia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --azul: #0a192f;
+            --dorado: #C5A059;
+            --blanco: #ffffff;
+            --gris-claro: #f8fafc;
+            --texto: #1a1a1b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--blanco);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 15px 8%;
+            background: white;
+            border-bottom: 3px solid var(--dorado);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo { color: var(--azul); font-weight: 800; font-size: 1.6rem; text-transform: uppercase; }
+        .logo span { color: var(--dorado); }
+
+        /* --- HERO (Imagen Obreros B/N) --- */
+        .hero {
+            height: 65vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.6), rgba(10, 25, 47, 0.6)), 
+                        url('PON_AQUI_TU_ENLACE_OBREROS_BN'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 12px solid var(--dorado);
+            max-width: 650px;
+        }
+
+        .hero h1 { font-size: 2.5rem; color: var(--azul); margin-bottom: 20px; line-height: 1.1; }
+
+        .btn-oro {
+            background: linear-gradient(135deg, #C5A059, #eed08a, #C5A059);
+            color: #000;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+            text-transform: uppercase;
+        }
+
+        /* --- INTRO (Ejecutivo y Contrato) --- */
+        .intro {
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-img { width: 100%; border-radius: 15px; border: 4px solid var(--dorado); box-shadow: 20px 20px var(--gris-claro); }
+
+        /* --- SERVICIOS (Los 21 divididos) --- */
+        .servicios { padding: 80px 8%; background: var(--gris-claro); }
+        .servicios h2 { color: var(--azul); font-size: 2.2rem; margin-bottom: 40px; border-bottom: 4px solid var(--dorado); display: inline-block; }
+        
+        .division-title { 
+            background: var(--azul); color: var(--dorado); 
+            padding: 12px 25px; border-radius: 5px; 
+            margin-top: 40px; display: inline-block; font-weight: bold;
+        }
+
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--dorado); transform: translateY(-5px); }
+        .card i { font-size: 2.5rem; color: var(--azul); margin-bottom: 15px; }
+        .card p { margin: 0; font-weight: bold; font-size: 0.95rem; color: var(--texto); }
+
+        /* --- PUBLICIDAD --- */
+        .publicidad {
+            background: white;
+            margin: 40px 8%;
+            padding: 40px;
+            border: 2px dashed var(--dorado);
+            text-align: center;
+            border-radius: 15px;
+            color: #666;
+        }
+
+        /* --- MISIÓN / VISIÓN (Obrero Credencial) --- */
+        .mision-vision {
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .mv-box { padding: 40px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--dorado); }
+        .mv-box h3 { color: var(--azul); margin-top: 0; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--azul);
+            color: white;
+            padding: 80px 8% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 { color: var(--dorado); margin-bottom: 20px; }
+        .footer-col p { font-size: 0.9rem; opacity: 0.8; margin: 5px 0; }
+        .footer-col a { color: var(--dorado); text-decoration: none; font-weight: bold; }
+
+        .legal-tag { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.75rem; opacity: 0.6; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SOLUCIONES <span>360°</span></div>
+        <div style="font-weight: bold; color: var(--azul);">WTSP: 62354424</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-card">
+            <h1>Gestionamos sus requerimientos con personal capacitado y verificado</h1>
+            <a href="https://wa.me/59162354424" class="btn-oro">Solicitar Servicio</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <img src="PON_AQUI_TU_ENLACE_EJECUTIVO_CONTRATO" class="intro-img" alt="Respaldo Administrativo">
+        <div>
+            <h2 style="color: var(--azul)">Soluciones 360°</h2>
+            <p>Es la primera plataforma boliviana dedicada a formalizar, organizar y profesionalizar la prestación de servicios personales y técnicos.</p>
+            <p>Conectamos a clientes con trabajadores verificados y los respaldamos, garantizando seguridad, calidad y confianza en cada transacción bajo blindaje legal total.</p>
+        </div>
+    </section>
+
+    <section class="servicios">
+        <h2>Catálogo de Especialidades</h2>
+
+        <div class="division-title">Div. 1: Asistencia y Cuidado Personal</div>
+        <div class="grid-servicios">
+            <div class="card"><i class="fas fa-broom"></i><p>1. Limpieza</p></div>
+            <div class="card"><i class="fas fa-user-nurse"></i><p>2. Cuidado de Ancianos</p></div>
+            <div class="card"><i class="fas fa-paw"></i><p>3. Paseo y Cuidado de Mascotas</p></div>
+            <div class="card"><i class="fas fa-glass-cheers"></i><p>4. Protocolo Social</p></div>
+        </div>
+
+        <div class="division-title">Div. 2: Logística y Gestión de Tiempo</div>
+        <div class="grid-servicios">
+            <div class="card"><i class="fas fa-concierge-bell"></i><p>5. Digital Concierge</p></div>
+            <div class="card"><i class="fas fa-car-side"></i><p>6. Transporte Seguro</p></div>
+            <div class="card"><i class="fas fa-users-cog"></i><p>7. Gestores de Filas</p></div>
+            <div class="card"><i class="fas fa-shopping-basket"></i><p>8. Auxiliar de Compras</p></div>
+            <div class="card"><i class="fas fa-walking"></i><p>9. Retorno Seguro</p></div>
+            <div class="card"><i class="fas fa-user-shield"></i><p>10. Seguridad Personal</p></div>
+        </div>
+
+        <div class="division-title">Div. 3: Mantenimiento y Refacciones Técnicas</div>
+        <div class="grid-servicios">
+            <div class="card"><i class="fas fa-trowel-bricks"></i><p>11. Albañilería</p></div>
+            <div class="card"><i class="fas fa-paint-roller"></i><p>12. Pintura</p></div>
+            <div class="card"><i class="fas fa-faucet"></i><p>13. Plomería</p></div>
+            <div class="card"><i class="fas fa-bolt"></i><p>14. Electricidad</p></div>
+            <div class="card"><i class="fas fa-hammer"></i><p>15. Carpintería y Melamina</p></div>
+            <div class="card"><i class="fas fa-key"></i><p>16. Cerrajería</p></div>
+        </div>
+
+        <div class="division-title">Div. 4: Asistencia y Gestión Profesional</div>
+        <div class="grid-servicios">
+            <div class="card"><i class="fas fa-user-tie"></i><p>17. Asistente Personal</p></div>
+            <div class="card"><i class="fas fa-file-invoice"></i><p>18. Secretaría Administrativa</p></div>
+            <div class="card"><i class="fas fa-file-signature"></i><p>19. Trámites</p></div>
+            <div class="card"><i class="fas fa-envelope-open-text"></i><p>20. Mensajería</p></div>
+            <div class="card"><i class="fas fa-briefcase"></i><p>21. Apoyo Comercial Eventual</p></div>
+        </div>
+    </section>
+
+    <div class="publicidad">
+        <p><strong>ESPACIO ESTRATÉGICO PARA PUBLICIDAD</strong></p>
+        <p style="font-size: 0.8rem;">Espacio disponible para empresas aliadas (Ferreterías, Seguros, Bancos).</p>
+    </div>
+
+    <section class="mision-vision">
+        <div class="mv-box">
+            <h3>MISIÓN</h3>
+            <p>Brindar soluciones integrales y confiables a hogares, negocios y personas, mediante una red de prestadores verificados, capacitados y respaldados.</p>
+        </div>
+        <div class="mv-box">
+            <h3>VISIÓN</h3>
+            <p>Ser la empresa de servicios más confiable e innovadora de Bolivia, liderando la formalización de la mano de obra y elevando los estándares de calidad.</p>
+        </div>
+        <div style="grid-column: span 2; text-align: center; margin-top: 20px;">
+            <img src="PON_AQUI_TU_ENLACE_OBRERO_CREDENCIAL" style="width: 250px; border-radius: 50%; border: 6px solid var(--dorado);" alt="Personal Verificado">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>RESPALDO LEGAL</h4>
+                <p>• Contrato Civil Independiente</p>
+                <p>• Declaración Jurada (Respaldo)</p>
+                <p>• Blindaje Total Soluciones 360°</p>
+            </div>
+            <div>
+                <h4>GARANTÍA 360°</h4>
+                <p>Personal Verificado (REJAP)</p>
+                <p>Seguimiento Técnico Continuo</p>
+                <p>Garantía de Satisfacción</p>
+            </div>
+            <div>
+                <h4>CONTACTO</h4>
+                <p>WhatsApp: <a href="https://wa.me/59162354424">62354424</a></p>
+                <p>Email: soluciones360bolivia@gmail.com</p>
+                <p>La Paz, Bolivia</p>
+            </div>
+        </div>
+        <div class="legal-tag">
+            © 2026 Soluciones 360° Bolivia. “Trabajamos con personas verificadas para que tú solo te preocupes por disfrutar de tu tiempo libre.”
+        </div>
+    </footer>
+
+</body>
+</html>
