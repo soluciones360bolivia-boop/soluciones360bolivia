@@ -6,46 +6,59 @@
     <title>Soluciones 360° Bolivia</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root { --azul: #0a192f; --azul-c: #112240; --oro: #C5A059; --blanco: #e6f1ff; }
+        :root { --azul: #0a192f; --azul-c: #112240; --oro: #C5A059; --oro-brillante: #FFD700; --blanco: #e6f1ff; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--azul); color: var(--blanco); margin: 0; padding: 0; }
         
+        /* HEADER LOGO Y BOTON */
+        .header-top {
+            position: absolute; top: 0; left: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 5%; z-index: 10; box-sizing: border-box;
+        }
+        .logo-text {
+            font-size: 1.8rem; font-weight: bold;
+            color: var(--oro-brillante);
+            text-shadow: 1px 1px 2px #000, 0 0 10px rgba(255, 215, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        .btn-solicitar {
+            background: var(--oro); color: var(--azul); padding: 12px 25px; 
+            text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
         /* HERO */
         .hero { 
             height: 550px; 
             background: linear-gradient(rgba(10,25,47,0.5), rgba(10,25,47,0.5)), url('https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png');
             background-size: cover; background-position: center;
-            position: relative;
             display: flex; flex-direction: column; justify-content: flex-end;
             padding-bottom: 60px;
             border-bottom: 4px solid var(--oro);
         }
         .hero h1 { font-size: 2rem; width: 90%; margin: 0 auto; text-transform: uppercase; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
-        .btn-top-right { 
-            position: absolute; top: 20px; right: 20px;
-            background: var(--oro); color: var(--azul); padding: 12px 25px; 
-            text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9rem;
-        }
 
         .main-container { display: grid; grid-template-columns: 1fr 250px; gap: 20px; padding: 0 10%; background: var(--azul); }
 
-        /* INTRODUCCIÓN - SOLO TEXTO LIMPIO */
+        /* INTRODUCCIÓN */
         .intro-sec { grid-column: 1 / -1; padding: 60px 10%; background: #fff; color: #111; margin-left: -11.2%; margin-right: -11.2%; }
         .intro-text h2 { color: var(--azul); margin-bottom: 30px; }
         .intro-text p { margin-bottom: 25px; line-height: 1.8; text-align: justify; font-size: 1.1rem; }
 
-        /* MISIÓN Y VISIÓN - SOLO TEXTO LIMPIO */
-        .mv-sec { grid-column: 1 / -1; padding: 60px 10%; background: var(--azul-c); border-bottom: 2px solid var(--oro); }
-        .mv-box h3 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro); padding-bottom: 10px; margin-bottom: 15px; }
-        .mv-box p { line-height: 1.8; font-size: 1.1rem; text-align: justify; margin-bottom: 40px; }
-
         /* SERVICIOS */
         .servicios-content { padding-bottom: 60px; }
+        .section-subtitle { color: var(--oro); font-size: 1.8rem; margin-top: 40px; text-transform: uppercase; border-bottom: 2px solid var(--oro); display: inline-block; padding-bottom: 5px; }
         .div-title { color: var(--oro); font-size: 1.2rem; font-weight: bold; margin: 35px 0 15px; border-left: 5px solid var(--oro); padding-left: 15px; }
         .item-list { background: var(--azul-c); padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; border: 1px solid rgba(197,160,89,0.1); }
         .item-list i { color: var(--oro); width: 45px; font-size: 1.3rem; text-align: center; margin-right: 10px; }
 
         /* PUBLICIDAD VERTICAL */
-        .ads-vertical { background: #050c16; border: 1px dashed var(--oro); padding: 25px; margin-top: 35px; text-align: center; color: var(--oro); font-weight: bold; height: fit-content; align-self: start; position: sticky; top: 20px; }
+        .ads-vertical { background: #050c16; border: 1px dashed var(--oro); padding: 25px; margin-top: 35px; text-align: center; color: var(--oro); font-weight: bold; height: auto; align-self: stretch; }
+
+        /* MISIÓN Y VISIÓN - AHORA DEBAJO */
+        .mv-sec { grid-column: 1 / -1; padding: 60px 10%; background: var(--azul-c); border-top: 2px solid var(--oro); border-bottom: 2px solid var(--oro); margin-left: -11.2%; margin-right: -11.2%; }
+        .mv-box h3 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro); padding-bottom: 10px; margin-bottom: 15px; }
+        .mv-box p { line-height: 1.8; font-size: 1.1rem; text-align: justify; margin-bottom: 40px; }
 
         /* FOOTER */
         footer { grid-column: 1 / -1; background: #02060c; padding: 60px 10% 40px; border-top: 4px solid var(--oro); }
@@ -59,33 +72,27 @@
 </head>
 <body>
 
+<div class="header-top">
+    <div class="logo-text">Soluciones 360°</div>
+    <a href="https://wa.me/59162354424" class="btn-solicitar">SOLICITAR UN SERVICIO</a>
+</div>
+
 <section class="hero">
-    <a href="https://wa.me/59162354424" class="btn-top-right">SOLICITAR SERVICIO INMEDIATO</a>
     <h1>Gestionamos sus requerimientos con personal capacitado y verificado</h1>
 </section>
 
 <section class="intro-sec">
     <div class="intro-text">
-        <h2>Soluciones 360°</h2>
         <p>Soluciones 360° es la primera plataforma boliviana dedicada a formalizar, organizar y profesionalizar la prestación de servicios personales y técnicos de toda índole a domicilio, oficina o donde el cliente lo requiera de manera inmediata y garantizada.</p>
         <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza. Cada uno de nuestros especialistas pasa por un riguroso proceso de selección y control.</p>
         <p>Nuestro compromiso es elevar el estándar de calidad en el mercado nacional, ofreciendo un respaldo legal y administrativo total en cada una de nuestras intervenciones, blindando la seguridad del cliente.</p>
     </div>
 </section>
 
-<section class="mv-sec">
-    <div class="mv-box">
-        <h3>Misión</h3>
-        <p>Brindar soluciones integrales y confiables mediante una red de personal altamente capacitado y verificado, garantizando la satisfacción total de nuestros clientes a través de la formalización y dignificación del trabajo técnico y personal en Bolivia.</p>
-    </div>
-    <div class="mv-box">
-        <h3>Visión</h3>
-        <p>Ser la plataforma líder y referente a nivel nacional en la gestión de servicios integrales, reconocida por nuestra excelencia operativa, seguridad jurídica y el compromiso con el desarrollo profesional de nuestros colaboradores.</p>
-    </div>
-</section>
-
 <div class="main-container">
     <div class="servicios-content">
+        <h2 class="section-subtitle">Nuestros servicios</h2>
+        
         <div class="div-title">DIVISIÓN 1: ASISTENCIA Y CUIDADO PERSONAL</div>
         <div class="item-list"><i class="fas fa-broom"></i><span>Limpieza</span></div>
         <div class="item-list"><i class="fas fa-user-nurse"></i><span>Cuidado de Ancianos</span></div>
@@ -119,28 +126,39 @@
     <aside class="ads-vertical">
         <p>ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</p>
     </aside>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-box">
-                <h4>Respaldo Legal</h4>
-                <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
-                <p>CONTRATO CIVIL DE PRESTACIÓN DE SERVICIOS INDEPENDIENTES</p>
-            </div>
-            <div class="footer-box">
-                <h4>Contáctanos</h4>
-                <p>WhatsApp: 62354424</p>
-                <p>Mallasilla, La Paz - Bolivia</p>
-            </div>
-            <div class="footer-box">
-                <h4>Redes Sociales</h4>
-                <p>soluciones360bolivia</p>
-            </div>
-        </div>
-        <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA.</div>
-    </footer>
 </div>
+
+<section class="mv-sec">
+    <div class="mv-box">
+        <h3>Misión</h3>
+        <p>Brindar soluciones integrales y confiables mediante una red de personal altamente capacitado y verificado, garantizando la satisfacción total de nuestros clientes a través de la formalización y dignificación del trabajo técnico y personal en Bolivia.</p>
+    </div>
+    <div class="mv-box">
+        <h3>Visión</h3>
+        <p>Ser la plataforma líder y referente a nivel nacional en la gestión de servicios integrales, reconocida por nuestra excelencia operativa, seguridad jurídica y el compromiso con el desarrollo profesional de nuestros colaboradores.</p>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-box">
+            <h4>Respaldo Legal</h4>
+            <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
+            <p>CONTRATO CIVIL DE PRESTACIÓN DE SERVICIOS INDEPENDIENTES</p>
+        </div>
+        <div class="footer-box">
+            <h4>Contáctanos</h4>
+            <p>WhatsApp: 62354424</p>
+            <p>soluciones360bolivia@gmail.com</p>
+            <p>Mallasilla, La Paz - Bolivia</p>
+        </div>
+        <div class="footer-box">
+            <h4>Redes Sociales</h4>
+            <p>soluciones360bolivia</p>
+        </div>
+    </div>
+    <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA.</div>
+</footer>
 
 </body>
 </html>
- 
