@@ -26,31 +26,38 @@
             text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9rem;
         }
 
-        /* INTRODUCCIÓN - IMAGEN CORRECTA (OBRERO CREDENCIAL) */
-        .intro-sec { padding: 60px 10%; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; background: #fff; color: #111; }
+        /* CONTENEDOR PRINCIPAL CON PUBLICIDAD LATERAL */
+        .main-container { display: grid; grid-template-columns: 1fr 250px; gap: 20px; padding: 0 10%; background: var(--azul); }
+
+        /* SECCIÓN INTRODUCCIÓN */
+        .intro-sec { grid-column: 1 / -1; padding: 60px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; background: #fff; color: #111; padding-left: 10%; padding-right: 10%; margin-left: -11.2%; margin-right: -11.2%; }
         .intro-sec img { width: 100%; border-radius: 10px; border: 2px solid var(--oro); }
         .intro-text p { margin-bottom: 15px; line-height: 1.6; text-align: justify; }
 
-        /* SERVICIOS - SIN NÚMEROS */
-        .servicios-sec { padding: 60px 10%; }
+        /* MISIÓN Y VISIÓN */
+        .mv-sec { grid-column: 1 / -1; padding: 40px 10%; background: var(--azul-c); margin-bottom: 30px; border-bottom: 2px solid var(--oro); }
+        .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .mv-box h3 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro); padding-bottom: 10px; }
+        .mv-box p { line-height: 1.6; font-size: 1rem; }
+
+        /* SERVICIOS */
+        .servicios-content { padding-bottom: 60px; }
         .div-title { color: var(--oro); font-size: 1.2rem; font-weight: bold; margin: 30px 0 10px; border-left: 4px solid var(--oro); padding-left: 15px; }
         .item-list { background: var(--azul-c); padding: 15px; margin-bottom: 8px; border-radius: 5px; display: flex; align-items: center; }
         .item-list i { color: var(--oro); width: 45px; font-size: 1.2rem; text-align: center; margin-right: 10px; }
 
-        /* PUBLICIDAD */
-        .ads { padding: 40px 10%; text-align: center; background: #050c16; border: 1px dashed var(--oro); margin: 20px 10%; border-radius: 10px; color: var(--oro); font-weight: bold; }
+        /* PUBLICIDAD VERTICAL DERECHA */
+        .ads-vertical { background: #050c16; border: 1px dashed var(--oro); padding: 20px; margin-top: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--oro); font-weight: bold; height: fit-content; align-self: start; position: sticky; top: 20px; }
 
-        /* FOOTER CORREGIDO */
-        footer { background: #02060c; padding: 60px 10% 40px; border-top: 4px solid var(--oro); }
+        /* FOOTER */
+        footer { grid-column: 1 / -1; background: #02060c; padding: 60px 10% 40px; border-top: 4px solid var(--oro); }
         .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
         .footer-box h4 { color: var(--oro); text-transform: uppercase; margin-bottom: 15px; font-size: 1rem; }
-        .footer-box p, .footer-box a { font-size: 0.9rem; color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; line-height: 1.4; }
-        .footer-box i { color: var(--oro); margin-right: 10px; width: 20px; }
-        .social-icons a { display: inline-block; margin-right: 15px; font-size: 1.5rem; color: var(--oro); transition: 0.3s; }
-        .social-icons a:hover { transform: scale(1.1); color: #fff; }
+        .footer-box p, .footer-box a { font-size: 0.9rem; color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
+        .social-icons a { display: inline-block; margin-right: 15px; font-size: 1.5rem; color: var(--oro); }
         .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.8rem; font-weight: bold; }
 
-        @media (max-width: 768px) { .intro-sec, .footer-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 992px) { .main-container { grid-template-columns: 1fr; } .ads-vertical { position: relative; width: 100%; margin: 20px 0; } .mv-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -61,75 +68,89 @@
 </section>
 
 <section class="intro-sec">
-    <img src="https://i.ibb.co/8nL8pHH9/Screenshot-20260213-010742-com-hihonor-photos-Single-Photo-Activity.jpg" alt="Obrero con Credencial Verificado">
+    <img src="https://i.ibb.co/8nL8pHH9/Screenshot-20260213-010742-com-hihonor-photos-Single-Photo-Activity.jpg" alt="Personal Verificado">
     <div class="intro-text">
         <h2 style="color:var(--azul)">Soluciones 360°</h2>
         <p>Soluciones 360° es la primera plataforma boliviana dedicada a formalizar, organizar y profesionalizar la prestación de servicios personales y técnicos de toda índole a domicilio, oficina o donde el cliente lo requiera de manera inmediata y garantizada.</p>
-        <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza. Cada uno de nuestros especialistas pasa por un riguroso proceso de selección y control.</p>
-        <p>Nuestro compromiso es elevar el estándar de calidad en el mercado nacional, ofreciendo un respaldo legal y administrativo total en cada una de nuestras intervenciones, blindando la seguridad del cliente.</p>
+        <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza.</p>
     </div>
 </section>
 
-<section class="servicios-sec">
-    <h2 style="color:var(--oro); text-align:center; text-transform:uppercase; letter-spacing:2px;">Nuestros Servicios</h2>
-    
-    <div class="div-title">DIVISIÓN 1: ASISTENCIA Y CUIDADO PERSONAL</div>
-    <div class="item-list"><i class="fas fa-broom"></i><span>Limpieza</span></div>
-    <div class="item-list"><i class="fas fa-user-nurse"></i><span>Cuidado de Ancianos</span></div>
-    <div class="item-list"><i class="fas fa-paw"></i><span>Paseo y Cuidado de Mascotas</span></div>
-    <div class="item-list"><i class="fas fa-glass-cheers"></i><span>Protocolo Social</span></div>
-
-    <div class="div-title">DIVISIÓN 2: LOGÍSTICA Y GESTIÓN DE TIEMPO</div>
-    <div class="item-list"><i class="fas fa-tablet-alt"></i><span>Digital Concierge</span></div>
-    <div class="item-list"><i class="fas fa-car"></i><span>Transporte Seguro</span></div>
-    <div class="item-list"><i class="fas fa-users"></i><span>Gestores de Filas</span></div>
-    <div class="item-list"><i class="fas fa-shopping-basket"></i><span>Auxiliar de Compras</span></div>
-    <div class="item-list"><i class="fas fa-walking"></i><span>Retorno Seguro</span></div>
-    <div class="item-list"><i class="fas fa-user-shield"></i><span>Seguridad Personal (Protección y acompañamiento preventivo)</span></div>
-
-    <div class="div-title">DIVISIÓN 3: MANTENIMIENTO Y REFACCIONES TÉCNICAS</div>
-    <div class="item-list"><i class="fas fa-trowel-bricks"></i><span>Albañilería</span></div>
-    <div class="item-list"><i class="fas fa-paint-roller"></i><span>Pintura</span></div>
-    <div class="item-list"><i class="fas fa-faucet"></i><span>Plomería</span></div>
-    <div class="item-list"><i class="fas fa-bolt"></i><span>Electricidad</span></div>
-    <div class="item-list"><i class="fas fa-hammer"></i><span>Carpintería y Melamina</span></div>
-    <div class="item-list"><i class="fas fa-key"></i><span>Cerrajería</span></div>
-
-    <div class="div-title">DIVISIÓN 4: ASISTENCIA Y GESTIÓN PROFESIONAL</div>
-    <div class="item-list"><i class="fas fa-user-tie"></i><span>Asistente Personal</span></div>
-    <div class="item-list"><i class="fas fa-user-edit"></i><span>Secretaría Administrativa</span></div>
-    <div class="item-list"><i class="fas fa-file-signature"></i><span>Trámites y Mensajería</span></div>
-    <div class="item-list"><i class="fas fa-briefcase"></i><span>Apoyo Comercial Eventual</span></div>
+<section class="mv-sec">
+    <div class="mv-grid">
+        <div class="mv-box">
+            <h3>Nuestra Misión</h3>
+            <p>Brindar soluciones integrales mediante una red de personal verificado, garantizando seguridad jurídica y satisfacción total del cliente.</p>
+        </div>
+        <div class="mv-box">
+            <h3>Nuestra Visión</h3>
+            <p>Ser el referente nacional líder en la gestión de servicios técnicos y personales, elevando el estándar de calidad en el mercado boliviano.</p>
+        </div>
+    </div>
 </section>
 
-<div class="ads">ESPACIO PARA PUBLICIDAD CORPORATIVA</div>
+<div class="main-container">
+    <div class="servicios-content">
+        <div class="div-title">DIVISIÓN 1: ASISTENCIA Y CUIDADO PERSONAL</div>
+        <div class="item-list"><i class="fas fa-broom"></i><span>Limpieza</span></div>
+        <div class="item-list"><i class="fas fa-user-nurse"></i><span>Cuidado de Ancianos</span></div>
+        <div class="item-list"><i class="fas fa-paw"></i><span>Paseo y Cuidado de Mascotas</span></div>
+        <div class="item-list"><i class="fas fa-glass-cheers"></i><span>Protocolo Social</span></div>
 
-<footer>
-    <div class="footer-grid">
-        <div class="footer-box">
-            <h4>Respaldo Legal</h4>
-            <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
-            <p>CONTRATO CIVIL DE PRESTACIÓN DE SERVICIOS INDEPENDIENTES</p>
-            <p>Blindaje total a favor de Soluciones 360°.</p>
-        </div>
-        <div class="footer-box">
-            <h4>Contáctanos</h4>
-            <a href="https://wa.me/59162354424"><i class="fab fa-whatsapp"></i> 62354424</a>
-            <a href="mailto:soluciones360bolivia@gmail.com"><i class="far fa-envelope"></i> soluciones360bolivia@gmail.com</a>
-            <p><i class="fas fa-map-marker-alt"></i> Mallasilla, La Paz - Bolivia</p>
-        </div>
-        <div class="footer-box">
-            <h4>Redes Sociales</h4>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+        <div class="div-title">DIVISIÓN 2: LOGÍSTICA Y GESTIÓN DE TIEMPO</div>
+        <div class="item-list"><i class="fas fa-tablet-alt"></i><span>Digital Concierge</span></div>
+        <div class="item-list"><i class="fas fa-car"></i><span>Transporte Seguro</span></div>
+        <div class="item-list"><i class="fas fa-users"></i><span>Gestores de Filas</span></div>
+        <div class="item-list"><i class="fas fa-shopping-basket"></i><span>Auxiliar de Compras</span></div>
+        <div class="item-list"><i class="fas fa-walking"></i><span>Retorno Seguro</span></div>
+        <div class="item-list"><i class="fas fa-user-shield"></i><span>Seguridad Personal</span></div>
+
+        <div class="div-title">DIVISIÓN 3: MANTENIMIENTO Y REFACCIONES TÉCNICAS</div>
+        <div class="item-list"><i class="fas fa-trowel-bricks"></i><span>Albañilería</span></div>
+        <div class="item-list"><i class="fas fa-paint-roller"></i><span>Pintura</span></div>
+        <div class="item-list"><i class="fas fa-faucet"></i><span>Plomería</span></div>
+        <div class="item-list"><i class="fas fa-bolt"></i><span>Electricidad</span></div>
+        <div class="item-list"><i class="fas fa-hammer"></i><span>Carpintería y Melamina</span></div>
+        <div class="item-list"><i class="fas fa-key"></i><span>Cerrajería</span></div>
+
+        <div class="div-title">DIVISIÓN 4: ASISTENCIA Y GESTIÓN PROFESIONAL</div>
+        <div class="item-list"><i class="fas fa-user-tie"></i><span>Asistente Personal</span></div>
+        <div class="item-list"><i class="fas fa-user-edit"></i><span>Secretaría Administrativa</span></div>
+        <div class="item-list"><i class="fas fa-file-contract"></i><span>Trámites</span></div>
+        <div class="item-list"><i class="fas fa-truck"></i><span>Mensajería</span></div>
+        <div class="item-list"><i class="fas fa-briefcase"></i><span>Apoyo Comercial Eventual</span></div>
+    </div>
+
+    <aside class="ads-vertical">
+        <p>ESPACIO PARA PUBLICIDAD</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">FERRETERÍAS | SEGUROS | BANCOS</p>
+    </aside>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-box">
+                <h4>Respaldo Legal</h4>
+                <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
+                <p>CONTRATO CIVIL DE PRESTACIÓN DE SERVICIOS INDEPENDIENTES</p>
             </div>
-            <p>soluciones360bolivia</p>
-            <p style="font-style:italic; font-size:0.8rem; margin-top:10px;">Trabaja seguro con respaldo legal, administrativo y comercial.</p>
+            <div class="footer-box">
+                <h4>Contáctanos</h4>
+                <a href="https://wa.me/59162354424"><i class="fab fa-whatsapp"></i> 62354424</a>
+                <p><i class="far fa-envelope"></i> soluciones360bolivia@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mallasilla, La Paz - Bolivia</p>
+            </div>
+            <div class="footer-box">
+                <h4>Redes Sociales</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>soluciones360bolivia</p>
+            </div>
         </div>
-    </div>
-    <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS RESERVADOS.</div>
-</footer>
+        <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS RESERVADOS.</div>
+    </footer>
+</div>
 
 </body>
 </html>
