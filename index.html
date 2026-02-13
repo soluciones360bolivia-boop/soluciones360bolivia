@@ -26,15 +26,18 @@
             text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.8rem;
         }
 
-        /* HERO */
+        /* HERO - TEXTO POSICIONADO AL PIE DE LA IMAGEN */
         .hero { 
             height: 500px; 
-            background: linear-gradient(rgba(10,25,47,0.6), rgba(10,25,47,0.6)), url('https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png');
+            background: linear-gradient(rgba(10,25,47,0.4), rgba(10,25,47,0.4)), url('https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png');
             background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            border-bottom: 4px solid var(--oro); text-align: center; padding: 0 20px;
+            display: flex; flex-direction: column; 
+            justify-content: flex-end; /* BAJA EL TEXTO AL FINAL */
+            align-items: center;
+            border-bottom: 4px solid var(--oro); text-align: center; 
+            padding: 0 20px 25px 20px; /* DISTANCIA MÍNIMA DEL BORDE INFERIOR */
         }
-        .hero h1 { font-size: 1.8rem; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); max-width: 800px; }
+        .hero h1 { font-size: 1.7rem; text-transform: uppercase; text-shadow: 3px 3px 6px rgba(0,0,0,0.9); max-width: 850px; margin: 0; line-height: 1.2; }
 
         /* CONTENEDOR GENERAL PARA CENTRADO */
         .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
@@ -70,9 +73,10 @@
         @media (max-width: 900px) {
             .main-grid { grid-template-columns: 1fr; }
             .ads-vertical { display: none; }
-            .hero h1 { font-size: 1.4rem; }
+            .hero h1 { font-size: 1.3rem; }
             .header-top { padding: 15px 5%; }
-            .logo-text { font-size: 1.2rem; }
+            .logo-text { font-size: 1.1rem; }
+            .hero { padding-bottom: 15px; height: 450px; }
         }
     </style>
 </head>
