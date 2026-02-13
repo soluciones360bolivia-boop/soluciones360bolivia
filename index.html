@@ -7,77 +7,43 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root { --azul: #0a192f; --azul-c: #112240; --oro: #C5A059; --oro-brillante: #FFD700; --blanco: #e6f1ff; }
-        
         body { font-family: 'Segoe UI', sans-serif; background: var(--azul); color: var(--blanco); margin: 0; padding: 0; overflow-x: hidden; }
-        
-        /* HEADER */
-        .header-top {
-            position: absolute; top: 0; left: 0; width: 100%;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 5%; z-index: 10; box-sizing: border-box;
-        }
+        .header-top { position: absolute; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; z-index: 10; box-sizing: border-box; }
         .logo-text { font-size: 1.5rem; font-weight: bold; color: var(--oro-brillante); text-shadow: 1px 1px 2px #000; }
         .btn-solicitar { background: var(--oro); color: var(--azul); padding: 10px 15px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.8rem; }
-
-        /* HERO - NUEVA IMAGEN */
-        .hero { 
-            height: 500px; 
-            background: linear-gradient(rgba(10,25,47,0.4), rgba(10,25,47,0.4)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: flex-end; align-items: center;
-            border-bottom: 4px solid var(--oro); text-align: center; padding: 0 20px 25px 20px;
-        }
+        .hero { height: 500px; background: linear-gradient(rgba(10,25,47,0.4), rgba(10,25,47,0.4)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border-bottom: 4px solid var(--oro); text-align: center; padding: 0 20px 25px 20px; }
         .hero h1 { font-size: 1.7rem; text-transform: uppercase; text-shadow: 3px 3px 6px rgba(0,0,0,0.9); max-width: 850px; margin: 0; }
-
         .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5%; width: 100%; box-sizing: border-box; }
-
-        /* INTRODUCCIÓN */
         .intro-sec { background: #fff; color: #111; padding: 60px 0; width: 100%; }
         .intro-text p { margin-bottom: 25px; line-height: 1.8; text-align: justify; font-size: 1.1rem; }
-
-        /* IMAGEN OBREROS B/N */
         .img-bn-sec { text-align: center; margin-top: 30px; }
         .img-bn-sec img { max-width: 100%; border-radius: 10px; border: 2px solid var(--oro); filter: grayscale(100%); }
-
-        /* SERVICIOS */
         .main-grid { display: grid; grid-template-columns: 1fr 250px; gap: 30px; margin-top: 40px; padding-bottom: 50px; }
         .section-subtitle { color: var(--oro); font-size: 1.8rem; margin: 40px 0 20px; text-transform: uppercase; border-bottom: 2px solid var(--oro); display: inline-block; }
         .div-title { color: var(--oro); font-size: 1.1rem; font-weight: bold; margin: 30px 0 15px; border-left: 5px solid var(--oro); padding-left: 15px; }
         .item-list { background: var(--azul-c); padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; border: 1px solid rgba(197,160,89,0.2); }
         .item-list i { color: var(--oro); width: 35px; font-size: 1.2rem; text-align: center; margin-right: 10px; }
-        .ads-vertical { background: #050c16; border: 1px dashed var(--oro); padding: 20px; text-align: center; color: var(--oro); font-weight: bold; height: fit-content; }
-
-        /* MISIÓN Y VISIÓN CON IMAGEN */
+        .ads-vertical-container { display: flex; flex-direction: column; gap: 15px; }
+        .ads-vertical { background: #050c16; border: 1px dashed var(--oro); padding: 20px; text-align: center; color: var(--oro); font-weight: bold; font-size: 0.8rem; }
         .mv-sec { background: var(--azul-c); padding: 60px 0; border-top: 2px solid var(--oro); border-bottom: 2px solid var(--oro); width: 100%; }
         .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .mv-image img { width: 100%; border-radius: 10px; border: 2px solid var(--oro); }
         .mv-box h3 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro); padding-bottom: 10px; margin-bottom: 15px; }
         .mv-box p { line-height: 1.8; font-size: 1.05rem; text-align: justify; margin: 0 0 20px 0; }
-
-        /* FOOTER */
         footer { background: #02060c; padding: 60px 5% 40px; border-top: 4px solid var(--oro); width: 100%; box-sizing: border-box; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
         .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.8rem; }
-
-        @media (max-width: 900px) {
-            .main-grid, .mv-grid { grid-template-columns: 1fr; }
-            .ads-vertical { display: none; }
-            .hero h1 { font-size: 1.3rem; }
-            .hero { height: 400px; }
-        }
+        @media (max-width: 900px) { .main-grid, .mv-grid { grid-template-columns: 1fr; } .ads-vertical-container { display: none; } }
     </style>
 </head>
 <body>
-
 <div class="header-top">
     <div class="logo-text">Soluciones 360°</div>
     <a href="https://wa.me/59162354424" class="btn-solicitar">SOLICITAR UN SERVICIO</a>
 </div>
-
 <section class="hero">
     <h1>Gestionamos sus requerimientos con personal capacitado y verificado</h1>
 </section>
-
 <section class="intro-sec">
     <div class="content-wrapper">
         <div class="intro-text">
@@ -85,13 +51,11 @@
             <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza.</p>
             <p>Nuestro compromiso es elevar el estándar de calidad en el mercado nacional, ofreciendo un respaldo legal y administrativo total en cada una de nuestras intervenciones.</p>
         </div>
-        
         <div class="img-bn-sec">
             <img src="https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png" alt="Especialistas">
         </div>
     </div>
 </section>
-
 <div class="content-wrapper">
     <div class="main-grid">
         <div class="servicios-content">
@@ -107,60 +71,52 @@
             <div class="item-list"><i class="fas fa-car"></i><span>Transporte Seguro</span></div>
             <div class="item-list"><i class="fas fa-users"></i><span>Gestores de Filas</span></div>
             <div class="item-list"><i class="fas fa-shopping-basket"></i><span>Auxiliar de Compras</span></div>
-            <div class="item-list"><i class="fas fa-walking"></i><span>Retorno Seguro</span></div>
+            <div class="item-list"><i class="fas fa-car-side"></i><span>Retorno Seguro</span></div>
             <div class="item-list"><i class="fas fa-user-shield"></i><span>Seguridad Personal</span></div>
 
             <div class="div-title">DIVISIÓN 3: MANTENIMIENTO Y REFACCIONES TÉCNICAS</div>
-            <div class="item-list"><i class="fas fa-trowel-bricks"></i><span>Albañilería y Pintura</span></div>
-            <div class="item-list"><i class="fas fa-faucet"></i><span>Plomería y Electricidad</span></div>
+            <div class="item-list"><i class="fas fa-trowel"></i><span>Albañilería</span></div>
+            <div class="item-list"><i class="fas fa-paint-roller"></i><span>Pintura</span></div>
+            <div class="item-list"><i class="fas fa-faucet"></i><span>Plomería</span></div>
+            <div class="item-list"><i class="fas fa-bolt"></i><span>Electricidad</span></div>
             <div class="item-list"><i class="fas fa-hammer"></i><span>Carpintería y Melamina</span></div>
             <div class="item-list"><i class="fas fa-key"></i><span>Cerrajería</span></div>
 
             <div class="div-title">DIVISIÓN 4: ASISTENCIA Y GESTIÓN PROFESIONAL</div>
             <div class="item-list"><i class="fas fa-user-tie"></i><span>Asistente Personal</span></div>
             <div class="item-list"><i class="fas fa-user-edit"></i><span>Secretaría Administrativa</span></div>
-            <div class="item-list"><i class="fas fa-file-contract"></i><span>Trámites y Mensajería</span></div>
+            <div class="item-list"><i class="fas fa-file-contract"></i><span>Trámites</span></div>
+            <div class="item-list"><i class="fas fa-truck"></i><span>Mensajería</span></div>
             <div class="item-list"><i class="fas fa-briefcase"></i><span>Apoyo Comercial Eventual</span></div>
         </div>
-        <aside class="ads-vertical"><p>ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</p></aside>
+        <aside class="ads-vertical-container">
+            <div class="ads-vertical">ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</div>
+            <div class="ads-vertical">ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</div>
+            <div class="ads-vertical">ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</div>
+            <div class="ads-vertical">ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</div>
+            <div class="ads-vertical">ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</div>
+            <div class="ads-vertical">ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</div>
+        </aside>
     </div>
 </div>
-
 <section class="mv-sec">
     <div class="content-wrapper">
         <div class="mv-grid">
-            <div class="mv-image">
-                <img src="https://i.ibb.co/BHBsPqHp/Screenshot-20251223-103539-com-google-android-googlequicksearchbox-Main-Activity-edit-16423368621593.jpg" alt="Misión y Visión">
-            </div>
+            <div class="mv-image"><img src="https://i.ibb.co/BHBsPqHp/Screenshot-20251223-103539-com-google-android-googlequicksearchbox-Main-Activity-edit-16423368621593.jpg" alt="Misión y Visión"></div>
             <div class="mv-text">
-                <div class="mv-box">
-                    <h3>Misión</h3>
-                    <p>Brindar soluciones integrales y confiables mediante una red de personal altamente capacitado y verificado, garantizando la satisfacción total de nuestros clientes.</p>
-                </div>
-                <div class="mv-box">
-                    <h3>Visión</h3>
-                    <p>Ser la plataforma líder y referente a nivel nacional en la gestión de servicios integrales, reconocida por nuestra excelencia operativa y seguridad jurídica.</p>
-                </div>
+                <div class="mv-box"><h3>Misión</h3><p>Brindar soluciones integrales y confiables mediante una red de personal altamente capacitado y verificado, garantizando la satisfacción total de nuestros clientes.</p></div>
+                <div class="mv-box"><h3>Visión</h3><p>Ser la plataforma líder y referente a nivel nacional en la gestión de servicios integrales, reconocida por nuestra excelencia operativa y seguridad jurídica.</p></div>
             </div>
         </div>
     </div>
 </section>
-
 <footer>
     <div class="footer-grid">
-        <div class="footer-box">
-            <h4>Respaldo Legal</h4>
-            <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
-            <p>CONTRATO CIVIL DE SERVICIOS INDEPENDIENTES</p>
-        </div>
-        <div class="footer-box">
-            <h4>Contáctanos</h4>
-            <p>WhatsApp: 62354424</p>
-            <p>soluciones360bolivia@gmail.com</p>
-        </div>
+        <div class="footer-box"><h4>Respaldo Legal</h4><p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p><p>CONTRATO CIVIL DE SERVICIOS INDEPENDIENTES</p></div>
+        <div class="footer-box"><h4>Contáctanos</h4><p>WhatsApp: 62354424</p><p>soluciones360bolivia@gmail.com</p></div>
     </div>
     <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA.</div>
 </footer>
-
 </body>
 </html>
+ 
