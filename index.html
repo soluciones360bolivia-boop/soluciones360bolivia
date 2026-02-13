@@ -9,51 +9,45 @@
         :root { --azul: #0a192f; --azul-c: #112240; --oro: #C5A059; --oro-brillante: #FFD700; --blanco: #e6f1ff; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--azul); color: var(--blanco); margin: 0; padding: 0; overflow-x: hidden; }
         
-        /* HEADER (SIN TOCAR) */
         .header-top { position: absolute; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; z-index: 10; box-sizing: border-box; }
         .logo-text { font-size: 1.5rem; font-weight: bold; color: var(--oro-brillante); text-shadow: 1px 1px 2px #000; }
         .btn-header { background: var(--oro); color: var(--azul); padding: 10px 15px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.8rem; }
 
-        /* HERO */
-        .hero { height: 400px; background: linear-gradient(rgba(10,25,47,0.5), rgba(10,25,47,0.5)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; border-bottom: 4px solid var(--oro); text-align: center; }
-        .hero h1 { font-size: 1.8rem; text-transform: uppercase; padding: 0 20px; text-shadow: 2px 2px 4px #000; }
+        .hero { height: 350px; background: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.7)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; border-bottom: 4px solid var(--oro); text-align: center; }
+        .hero h1 { font-size: 1.8rem; text-transform: uppercase; padding: 0 20px; text-shadow: 2px 2px 4px #000; color: var(--oro-brillante); }
 
-        /* IMAGEN B/N PUNTA A PUNTA */
-        .full-width-bn { width: 100vw; margin: 40px 0; overflow: hidden; border-top: 2px solid var(--oro); border-bottom: 2px solid var(--oro); }
-        .full-width-bn img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
+        .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5%; width: 100%; box-sizing: border-box; }
 
-        .content-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
-
-        /* SERVICIOS */
+        /* SERVICIOS Y PUBLICIDAD RESTAURADOS */
         .main-grid { display: grid; grid-template-columns: 1fr 250px; gap: 30px; margin: 40px 0; }
-        .section-title { color: var(--oro); font-size: 1.8rem; border-bottom: 2px solid var(--oro); display: inline-block; margin-bottom: 20px; }
-        .div-title { color: var(--oro); font-weight: bold; margin: 25px 0 10px; border-left: 4px solid var(--oro); padding-left: 10px; }
-        .item-list { background: var(--azul-c); padding: 12px; margin-bottom: 8px; border-radius: 4px; display: flex; align-items: center; }
-        .item-list i { color: var(--oro); margin-right: 12px; width: 20px; text-align: center; }
+        .section-title { color: var(--oro); font-size: 1.8rem; border-bottom: 2px solid var(--oro); display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
+        .div-title { color: var(--oro-brillante); font-weight: bold; margin: 30px 0 10px; border-left: 5px solid var(--oro); padding-left: 15px; text-transform: uppercase; }
+        .item-list { background: var(--azul-c); padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; border: 1px solid rgba(197,160,89,0.2); }
+        .item-list i { color: var(--oro); width: 30px; text-align: center; margin-right: 15px; font-size: 1.1rem; }
+        
+        .ads-container { display: flex; flex-direction: column; gap: 15px; }
+        .ad-box { background: #050c16; border: 1px dashed var(--oro); padding: 25px; text-align: center; color: var(--oro); font-size: 0.8rem; font-weight: bold; }
 
-        /* ACORDEÓN ESTRATÉGICO (Misión, Visión, Garantía, Políticas) */
-        .accordion-container { background: #fff; color: #111; padding: 60px 0; }
-        .accordion-item { border-bottom: 1px solid #ddd; max-width: 800px; margin: 0 auto; }
-        .accordion-header { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; text-transform: uppercase; color: var(--azul); }
-        .accordion-content { display: none; padding: 0 20px 20px; line-height: 1.6; text-align: justify; }
-        .accordion-header:hover { background: #f9f9f9; }
+        /* ACORDEÓN AZUL Y ORO */
+        .accordion-section { background: var(--azul); padding: 50px 0; border-top: 2px solid var(--oro); }
+        .accordion-item { border: 1px solid var(--oro); margin-bottom: 15px; border-radius: 5px; background: var(--azul-c); overflow: hidden; }
+        .accordion-header { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--oro-brillante); font-weight: bold; text-transform: uppercase; }
+        .accordion-content { display: none; padding: 20px; line-height: 1.6; border-top: 1px solid rgba(197,160,89,0.3); color: var(--blanco); background: var(--azul); }
 
-        /* BOTÓN FLOTANTE DE CONVERSIÓN */
-        .btn-float { position: fixed; bottom: 30px; right: 30px; background: var(--oro-brillante); color: var(--azul); padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.5); z-index: 100; border: 2px solid var(--azul); transition: 0.3s; }
-        .btn-float:hover { transform: scale(1.1); }
+        .btn-float { position: fixed; bottom: 30px; right: 30px; background: var(--oro-brillante); color: var(--azul); padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.5); z-index: 100; border: 2px solid var(--azul); }
 
-        /* FOOTER (SIN TOCAR) */
-        footer { background: #02060c; padding: 60px 5% 20px; border-top: 4px solid var(--oro); }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        .footer-box h4 { color: var(--oro); border-left: 3px solid var(--oro); padding-left: 10px; font-size: 0.9rem; }
+        footer { background: #02060c; padding: 60px 5% 20px; border-top: 4px solid var(--oro); width: 100%; box-sizing: border-box; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-box h4 { color: var(--oro); border-left: 3px solid var(--oro); padding-left: 10px; font-size: 0.9rem; margin-bottom: 20px; }
+        .footer-box p { font-size: 0.85rem; color: #ccc; margin-bottom: 10px; }
         .copyright { text-align: center; padding-top: 20px; margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.75rem; }
 
-        @media (max-width: 800px) { .main-grid { grid-template-columns: 1fr; } .btn-float { width: 80%; left: 10%; right: 10%; text-align: center; } }
+        @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } .ads-container { display: none; } }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO AHORA</a>
+<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO</a>
 
 <div class="header-top">
     <div class="logo-text">Soluciones 360°</div>
@@ -61,101 +55,69 @@
 </div>
 
 <section class="hero">
-    <h1>Profesionalismo y Seguridad en cada Servicio</h1>
+    <h1>Profesionalismo y Seguridad Garantizada</h1>
 </section>
-
-<div class="content-wrapper" style="padding-top: 40px;">
-    <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-        La primera plataforma boliviana dedicada a formalizar y garantizar servicios técnicos y personales con respaldo legal total.
-    </p>
-</div>
-
-<div class="full-width-bn">
-    <img src="https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png" alt="Especialistas Soluciones 360">
-</div>
 
 <div class="content-wrapper">
     <div class="main-grid">
         <div class="servicios-section">
             <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="div-title">ASISTENCIA Y CUIDADO PERSONAL</div>
+            
+            <div class="div-title">Div. 1: Asistencia y Cuidado Personal</div>
             <div class="item-list"><i class="fas fa-broom"></i> Limpieza</div>
             <div class="item-list"><i class="fas fa-user-nurse"></i> Cuidado de Ancianos</div>
-            
-            <div class="div-title">LOGÍSTICA Y GESTIÓN</div>
-            <div class="item-list"><i class="fas fa-car-side"></i> Retorno Seguro</div>
-            <div class="item-list"><i class="fas fa-shopping-basket"></i> Auxiliar de Compras</div>
+            <div class="item-list"><i class="fas fa-paw"></i> Paseo y Cuidado de Mascotas</div>
+            <div class="item-list"><i class="fas fa-glass-cheers"></i> Protocolo Social</div>
 
-            <div class="div-title">MANTENIMIENTO TÉCNICO</div>
-            <div class="item-list"><i class="fas fa-bolt"></i> Electricidad y Plomería</div>
+            <div class="div-title">Div. 2: Logística y Gestión de Tiempo</div>
+            <div class="item-list"><i class="fas fa-tablet-alt"></i> Digital Concierge</div>
+            <div class="item-list"><i class="fas fa-car"></i> Transporte Seguro</div>
+            <div class="item-list"><i class="fas fa-users"></i> Gestores de Filas</div>
+            <div class="item-list"><i class="fas fa-shopping-basket"></i> Auxiliar de Compras</div>
+            <div class="item-list"><i class="fas fa-car-side"></i> Retorno Seguro</div>
+            <div class="item-list"><i class="fas fa-user-shield"></i> Seguridad Personal</div>
+
+            <div class="div-title">Div. 3: Mantenimiento y Refacciones</div>
+            <div class="item-list"><i class="fas fa-trowel"></i> Albañilería y Pintura</div>
+            <div class="item-list"><i class="fas fa-faucet"></i> Plomería y Electricidad</div>
             <div class="item-list"><i class="fas fa-hammer"></i> Carpintería y Melamina</div>
+            <div class="item-list"><i class="fas fa-key"></i> Cerrajería</div>
+
+            <div class="div-title">Div. 4: Asistencia y Gestión Profesional</div>
+            <div class="item-list"><i class="fas fa-user-tie"></i> Asistente Personal</div>
+            <div class="item-list"><i class="fas fa-user-edit"></i> Secretaría Administrativa</div>
+            <div class="item-list"><i class="fas fa-file-contract"></i> Trámites y Mensajería</div>
+            <div class="item-list"><i class="fas fa-briefcase"></i> Apoyo Comercial Eventual</div>
         </div>
-        <aside style="padding-top: 80px;">
-            <div style="border: 1px dashed var(--oro); padding: 20px; text-align: center; font-size: 0.7rem; color: var(--oro);">
-                PUBLICIDAD DISPONIBLE
-            </div>
+
+        <aside class="ads-container">
+            <div class="ad-box">PUBLICIDAD DISPONIBLE</div>
+            <div class="ad-box">PUBLICIDAD DISPONIBLE</div>
+            <div class="ad-box">PUBLICIDAD DISPONIBLE</div>
+            <div class="ad-box">PUBLICIDAD DISPONIBLE</div>
         </aside>
     </div>
 </div>
 
-<section class="accordion-container">
+<section class="accordion-section">
     <div class="content-wrapper">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <img src="https://i.ibb.co/BHBsPqHp/Screenshot-20251223-103539-com-google-android-googlequicksearchbox-Main-Activity-edit-16423368621593.jpg" 
-                 style="max-width: 200px; border-radius: 10px; border: 2px solid var(--oro);">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAcc('mision')">Misión <i class="fas fa-chevron-down"></i></div>
+            <div id="mision" class="accordion-content">Brindar soluciones integrales y confiables mediante una red de personal altamente capacitado y verificado, garantizando la satisfacción total de nuestros clientes.</div>
         </div>
         
         <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAcc('mision')">Misión <i class="fas fa-plus"></i></div>
-            <div id="mision" class="accordion-content">Brindar soluciones integrales y confiables mediante una red de personal altamente capacitado y verificado, garantizando la satisfacción total y la seguridad jurídica de nuestros clientes.</div>
-        </div>
-        
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAcc('vision')">Visión <i class="fas fa-plus"></i></div>
-            <div id="vision" class="accordion-content">Ser la plataforma líder en Bolivia reconocida por elevar el estándar de calidad en servicios a domicilio y corporativos, siendo referentes en confianza y operatividad.</div>
+            <div class="accordion-header" onclick="toggleAcc('vision')">Visión <i class="fas fa-chevron-down"></i></div>
+            <div id="vision" class="accordion-content">Ser la plataforma líder y referente a nivel nacional en la gestión de servicios integrales, reconocida por nuestra excelencia operativa y seguridad jurídica.</div>
         </div>
 
         <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAcc('garantia')">Garantía de Servicio <i class="fas fa-plus"></i></div>
-            <div id="garantia" class="accordion-content">Todo servicio realizado a través de Soluciones 360° cuenta con un respaldo de supervisión técnica. Si el trabajo no cumple con lo acordado, intervenimos de inmediato para asegurar la calidad final.</div>
+            <div class="accordion-header" onclick="toggleAcc('garantia')">Garantía <i class="fas fa-chevron-down"></i></div>
+            <div id="garantia" class="accordion-content">Todos nuestros servicios cuentan con un respaldo de supervisión activa y garantía de cumplimiento técnico según los estándares de Soluciones 360°.</div>
         </div>
 
         <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAcc('politicas')">Políticas de Seguridad <i class="fas fa-plus"></i></div>
-            <div id="politicas" class="accordion-content">Contamos con blindaje legal total. Cada especialista pasa por una verificación de antecedentes y firmamos contratos de confidencialidad para su tranquilidad absoluta.</div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="content-wrapper">
-        <div class="footer-grid">
-            <div class="footer-box">
-                <h4>RESPALDO LEGAL</h4>
-                <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
-                <p>CONTRATO CIVIL DE PRESTACIÓN DE SERVICIOS</p>
-            </div>
-            <div class="footer-box">
-                <h4>CONTACTO</h4>
-                <p>WhatsApp: 62354424</p>
-                <p>La Paz - Bolivia</p>
-            </div>
-        </div>
-        <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS RESERVADOS.</div>
-    </div>
-</footer>
-
-<script>
-function toggleAcc(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
-}
-</script>
-
-</body>
-</html>
+            
  
