@@ -26,38 +26,36 @@
             text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 0.9rem;
         }
 
-        /* CONTENEDOR PRINCIPAL CON PUBLICIDAD LATERAL */
         .main-container { display: grid; grid-template-columns: 1fr 250px; gap: 20px; padding: 0 10%; background: var(--azul); }
 
-        /* SECCIÓN INTRODUCCIÓN */
+        /* INTRODUCCIÓN - 3 PÁRRAFOS COMPLETOS */
         .intro-sec { grid-column: 1 / -1; padding: 60px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; background: #fff; color: #111; padding-left: 10%; padding-right: 10%; margin-left: -11.2%; margin-right: -11.2%; }
         .intro-sec img { width: 100%; border-radius: 10px; border: 2px solid var(--oro); }
-        .intro-text p { margin-bottom: 15px; line-height: 1.6; text-align: justify; }
+        .intro-text p { margin-bottom: 20px; line-height: 1.8; text-align: justify; font-size: 1.05rem; }
 
-        /* MISIÓN Y VISIÓN */
-        .mv-sec { grid-column: 1 / -1; padding: 40px 10%; background: var(--azul-c); margin-bottom: 30px; border-bottom: 2px solid var(--oro); }
-        .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .mv-box h3 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro); padding-bottom: 10px; }
-        .mv-box p { line-height: 1.6; font-size: 1rem; }
+        /* MISIÓN Y VISIÓN COMPLETOS */
+        .mv-sec { grid-column: 1 / -1; padding: 50px 10%; background: var(--azul-c); border-bottom: 2px solid var(--oro); }
+        .mv-box h3 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro); padding-bottom: 10px; margin-bottom: 20px; }
+        .mv-box p { line-height: 1.8; font-size: 1.05rem; text-align: justify; margin-bottom: 30px; }
 
         /* SERVICIOS */
         .servicios-content { padding-bottom: 60px; }
-        .div-title { color: var(--oro); font-size: 1.2rem; font-weight: bold; margin: 30px 0 10px; border-left: 4px solid var(--oro); padding-left: 15px; }
-        .item-list { background: var(--azul-c); padding: 15px; margin-bottom: 8px; border-radius: 5px; display: flex; align-items: center; }
-        .item-list i { color: var(--oro); width: 45px; font-size: 1.2rem; text-align: center; margin-right: 10px; }
+        .div-title { color: var(--oro); font-size: 1.2rem; font-weight: bold; margin: 35px 0 15px; border-left: 5px solid var(--oro); padding-left: 15px; }
+        .item-list { background: var(--azul-c); padding: 15px; margin-bottom: 10px; border-radius: 5px; display: flex; align-items: center; border: 1px solid rgba(197,160,89,0.1); }
+        .item-list i { color: var(--oro); width: 45px; font-size: 1.3rem; text-align: center; margin-right: 10px; }
 
-        /* PUBLICIDAD VERTICAL DERECHA */
-        .ads-vertical { background: #050c16; border: 1px dashed var(--oro); padding: 20px; margin-top: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--oro); font-weight: bold; height: fit-content; align-self: start; position: sticky; top: 20px; }
+        /* PUBLICIDAD VERTICAL */
+        .ads-vertical { background: #050c16; border: 1px dashed var(--oro); padding: 25px; margin-top: 35px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--oro); font-weight: bold; height: fit-content; align-self: start; position: sticky; top: 20px; }
 
         /* FOOTER */
         footer { grid-column: 1 / -1; background: #02060c; padding: 60px 10% 40px; border-top: 4px solid var(--oro); }
         .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-        .footer-box h4 { color: var(--oro); text-transform: uppercase; margin-bottom: 15px; font-size: 1rem; }
-        .footer-box p, .footer-box a { font-size: 0.9rem; color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; }
+        .footer-box h4 { color: var(--oro); text-transform: uppercase; margin-bottom: 20px; }
+        .footer-box p, .footer-box a { font-size: 0.9rem; color: #ccc; text-decoration: none; display: block; margin-bottom: 12px; }
         .social-icons a { display: inline-block; margin-right: 15px; font-size: 1.5rem; color: var(--oro); }
-        .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.8rem; font-weight: bold; }
+        .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.85rem; font-weight: bold; }
 
-        @media (max-width: 992px) { .main-container { grid-template-columns: 1fr; } .ads-vertical { position: relative; width: 100%; margin: 20px 0; } .mv-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 992px) { .main-container { grid-template-columns: 1fr; } .intro-sec { grid-template-columns: 1fr; } .ads-vertical { display: none; } }
     </style>
 </head>
 <body>
@@ -72,20 +70,19 @@
     <div class="intro-text">
         <h2 style="color:var(--azul)">Soluciones 360°</h2>
         <p>Soluciones 360° es la primera plataforma boliviana dedicada a formalizar, organizar y profesionalizar la prestación de servicios personales y técnicos de toda índole a domicilio, oficina o donde el cliente lo requiera de manera inmediata y garantizada.</p>
-        <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza.</p>
+        <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza. Cada uno de nuestros especialistas pasa por un riguroso proceso de selección y control.</p>
+        <p>Nuestro compromiso es elevar el estándar de calidad en el mercado nacional, ofreciendo un respaldo legal y administrativo total en cada una de nuestras intervenciones, blindando la seguridad del cliente.</p>
     </div>
 </section>
 
 <section class="mv-sec">
-    <div class="mv-grid">
-        <div class="mv-box">
-            <h3>Nuestra Misión</h3>
-            <p>Brindar soluciones integrales mediante una red de personal verificado, garantizando seguridad jurídica y satisfacción total del cliente.</p>
-        </div>
-        <div class="mv-box">
-            <h3>Nuestra Visión</h3>
-            <p>Ser el referente nacional líder en la gestión de servicios técnicos y personales, elevando el estándar de calidad en el mercado boliviano.</p>
-        </div>
+    <div class="mv-box">
+        <h3>Misión</h3>
+        <p>Brindar soluciones integrales y confiables mediante una red de personal altamente capacitado y verificado, garantizando la satisfacción total de nuestros clientes a través de la formalización y dignificación del trabajo técnico y personal en Bolivia.</p>
+    </div>
+    <div class="mv-box">
+        <h3>Visión</h3>
+        <p>Ser la plataforma líder y referente a nivel nacional en la gestión de servicios integrales, reconocida por nuestra excelencia operativa, seguridad jurídica y el compromiso con el desarrollo profesional de nuestros colaboradores.</p>
     </div>
 </section>
 
@@ -122,8 +119,8 @@
     </div>
 
     <aside class="ads-vertical">
-        <p>ESPACIO PARA PUBLICIDAD</p>
-        <p style="font-size: 0.8rem; margin-top: 20px;">FERRETERÍAS | SEGUROS | BANCOS</p>
+        <p>ESPACIO DISPONIBLE PARA PUBLICIDAD CORPORATIVA</p>
+        <p style="font-size: 0.8rem; margin-top: 25px; opacity: 0.6;">FERRETERÍAS | SEGUROS | BANCOS | TECNOLOGÍA</p>
     </aside>
 
     <footer>
@@ -132,6 +129,7 @@
                 <h4>Respaldo Legal</h4>
                 <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
                 <p>CONTRATO CIVIL DE PRESTACIÓN DE SERVICIOS INDEPENDIENTES</p>
+                <p>Blindaje total a favor de Soluciones 360°.</p>
             </div>
             <div class="footer-box">
                 <h4>Contáctanos</h4>
@@ -154,3 +152,4 @@
 
 </body>
 </html>
+ 
