@@ -18,7 +18,11 @@
 
         .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5%; width: 100%; box-sizing: border-box; }
 
-        /* SERVICIOS Y PUBLICIDAD RESTAURADOS */
+        /* INTRODUCCIÓN LIMPIA */
+        .intro-sec { padding: 60px 0; text-align: center; }
+        .intro-text p { line-height: 1.8; font-size: 1.15rem; max-width: 900px; margin: 0 auto 20px; text-align: justify; }
+
+        /* GRID DE SERVICIOS Y PUBLICIDAD */
         .main-grid { display: grid; grid-template-columns: 1fr 250px; gap: 30px; margin: 40px 0; }
         .section-title { color: var(--oro); font-size: 1.8rem; border-bottom: 2px solid var(--oro); display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
         .div-title { color: var(--oro-brillante); font-weight: bold; margin: 30px 0 10px; border-left: 5px solid var(--oro); padding-left: 15px; text-transform: uppercase; }
@@ -28,13 +32,16 @@
         .ads-container { display: flex; flex-direction: column; gap: 15px; }
         .ad-box { background: #050c16; border: 1px dashed var(--oro); padding: 25px; text-align: center; color: var(--oro); font-size: 0.8rem; font-weight: bold; }
 
-        /* ACORDEÓN AZUL Y ORO */
+        /* SECCIÓN DESPLEGABLES (AZUL Y ORO) */
         .accordion-section { background: var(--azul); padding: 50px 0; border-top: 2px solid var(--oro); }
         .accordion-item { border: 1px solid var(--oro); margin-bottom: 15px; border-radius: 5px; background: var(--azul-c); overflow: hidden; }
-        .accordion-header { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--oro-brillante); font-weight: bold; text-transform: uppercase; }
-        .accordion-content { display: none; padding: 20px; line-height: 1.6; border-top: 1px solid rgba(197,160,89,0.3); color: var(--blanco); background: var(--azul); }
+        .accordion-header { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--oro-brillante); font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .accordion-header:hover { background: rgba(197,160,89,0.1); }
+        .accordion-content { display: none; padding: 20px; line-height: 1.6; border-top: 1px solid rgba(197,160,89,0.3); color: var(--blanco); background: var(--azul); text-align: justify; }
 
-        .btn-float { position: fixed; bottom: 30px; right: 30px; background: var(--oro-brillante); color: var(--azul); padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.5); z-index: 100; border: 2px solid var(--azul); }
+        /* CONVERSIÓN FACILITADA */
+        .btn-float { position: fixed; bottom: 30px; right: 30px; background: var(--oro-brillante); color: var(--azul); padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.5); z-index: 100; border: 2px solid var(--azul); transition: 0.3s; }
+        .btn-float:hover { transform: scale(1.05); }
 
         footer { background: #02060c; padding: 60px 5% 20px; border-top: 4px solid var(--oro); width: 100%; box-sizing: border-box; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
@@ -47,7 +54,7 @@
 </head>
 <body>
 
-<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO</a>
+<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO AHORA</a>
 
 <div class="header-top">
     <div class="logo-text">Soluciones 360°</div>
@@ -55,10 +62,16 @@
 </div>
 
 <section class="hero">
-    <h1>Profesionalismo y Seguridad Garantizada</h1>
+    <h1>Excelencia, Seguridad y Respaldo Legal</h1>
 </section>
 
 <div class="content-wrapper">
+    <section class="intro-sec">
+        <div class="intro-text">
+            <p>Soluciones 360° Bolivia es la primera plataforma dedicada a formalizar y organizar la prestación de servicios personales y técnicos. Gestionamos sus requerimientos con personal verificado, brindándole la tranquilidad que su hogar u oficina necesitan.</p>
+        </div>
+    </section>
+
     <div class="main-grid">
         <div class="servicios-section">
             <h2 class="section-title">Nuestros Servicios</h2>
@@ -74,7 +87,7 @@
             <div class="item-list"><i class="fas fa-car"></i> Transporte Seguro</div>
             <div class="item-list"><i class="fas fa-users"></i> Gestores de Filas</div>
             <div class="item-list"><i class="fas fa-shopping-basket"></i> Auxiliar de Compras</div>
-            <div class="item-list"><i class="fas fa-car-side"></i> Retorno Seguro</div>
+            <div class="item-list"><i class="fas fa-car-side"></i> Asistente de Retorno Seguro</div>
             <div class="item-list"><i class="fas fa-user-shield"></i> Seguridad Personal</div>
 
             <div class="div-title">Div. 3: Mantenimiento y Refacciones</div>
@@ -101,7 +114,7 @@
 
 <section class="accordion-section">
     <div class="content-wrapper">
-        <h2 class="section-title">Sobre Nosotros</h2>
+        <h2 class="section-title">Información Corporativa</h2>
         
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAcc('mision')">Misión <i class="fas fa-chevron-down"></i></div>
@@ -114,10 +127,50 @@
         </div>
 
         <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAcc('garantia')">Garantía <i class="fas fa-chevron-down"></i></div>
-            <div id="garantia" class="accordion-content">Todos nuestros servicios cuentan con un respaldo de supervisión activa y garantía de cumplimiento técnico según los estándares de Soluciones 360°.</div>
+            <div class="accordion-header" onclick="toggleAcc('garantia')">Garantía de Servicio <i class="fas fa-chevron-down"></i></div>
+            <div id="garantia" class="accordion-content">Todos nuestros servicios cuentan con un respaldo de supervisión activa. Si el resultado no cumple con los estándares acordados, nuestro equipo técnico interviene de manera inmediata.</div>
         </div>
 
         <div class="accordion-item">
-            
+            <div class="accordion-header" onclick="toggleAcc('politicas')">Políticas de Seguridad y Respaldo <i class="fas fa-chevron-down"></i></div>
+            <div id="politicas" class="accordion-content">Blindaje legal total a través de la DECLARACIÓN JURADA (RESPALDO LEGAL) y el CONTRATO CIVIL DE PRESTACIÓN DE SERVICIOS INDEPENDIENTES, asegurando la protección del cliente en cada intervención.</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="content-wrapper">
+        <div class="footer-grid">
+            <div class="footer-box">
+                <h4>RESPALDO LEGAL</h4>
+                <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
+                <p>CONTRATO CIVIL DE SERVICIOS</p>
+            </div>
+            <div class="footer-box">
+                <h4>CONTACTO</h4>
+                <p>WhatsApp: 62354424</p>
+                <p>Email: soluciones360bolivia@gmail.com</p>
+            </div>
+            <div class="footer-box">
+                <h4>UBICACIÓN</h4>
+                <p>La Paz - Bolivia</p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS RESERVADOS.</div>
+    </div>
+</footer>
+
+<script>
+function toggleAcc(id) {
+    var content = document.getElementById(id);
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
  
