@@ -30,9 +30,19 @@
         .mv-image img { width: 100%; border-radius: 10px; border: 2px solid var(--oro); }
         .mv-box h3 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro); padding-bottom: 10px; margin-bottom: 15px; }
         .mv-box p { line-height: 1.8; font-size: 1.05rem; text-align: justify; margin: 0 0 20px 0; }
-        footer { background: #02060c; padding: 60px 5% 40px; border-top: 4px solid var(--oro); width: 100%; box-sizing: border-box; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.8rem; }
+        
+        /* FOOTER MEJORADO */
+        footer { background: #02060c; padding: 60px 5% 20px; border-top: 4px solid var(--oro); width: 100%; box-sizing: border-box; }
+        .footer-top-invite { background: rgba(197, 160, 89, 0.1); border: 1px solid var(--oro); padding: 30px; border-radius: 10px; text-align: center; margin-bottom: 50px; }
+        .footer-top-invite h4 { color: var(--oro-brillante); margin: 0 0 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-invite { background: var(--oro); color: var(--azul); padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; transition: 0.3s; }
+        .btn-invite:hover { background: var(--oro-brillante); transform: scale(1.05); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-box h4 { color: var(--oro); text-transform: uppercase; margin-bottom: 20px; font-size: 0.9rem; border-left: 3px solid var(--oro); padding-left: 10px; }
+        .footer-box p, .footer-box a { font-size: 0.85rem; color: #ccc; text-decoration: none; display: block; margin-bottom: 10px; line-height: 1.5; }
+        .footer-box i { color: var(--oro); margin-right: 10px; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.75rem; opacity: 0.8; }
+        
         @media (max-width: 900px) { .main-grid, .mv-grid { grid-template-columns: 1fr; } .ads-vertical-container { display: none; } }
     </style>
 </head>
@@ -110,12 +120,35 @@
         </div>
     </div>
 </section>
+
 <footer>
-    <div class="footer-grid">
-        <div class="footer-box"><h4>Respaldo Legal</h4><p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p><p>CONTRATO CIVIL DE SERVICIOS INDEPENDIENTES</p></div>
-        <div class="footer-box"><h4>Contáctanos</h4><p>WhatsApp: 62354424</p><p>soluciones360bolivia@gmail.com</p></div>
+    <div class="content-wrapper">
+        <div class="footer-top-invite">
+            <h4>¿Eres experto en algún oficio o servicio profesional?</h4>
+            <a href="https://wa.me/59162354424?text=Deseo%20ser%20parte%20del%20equipo%20de%20especialistas" class="btn-invite">ÚNETE A NUESTRO EQUIPO DE ESPECIALISTAS</a>
+        </div>
+        
+        <div class="footer-grid">
+            <div class="footer-box">
+                <h4>Respaldo Legal</h4>
+                <p>DECLARACIÓN JURADA (RESPALDO LEGAL)</p>
+                <p>CONTRATO CIVIL DE SERVICIOS INDEPENDIENTES</p>
+            </div>
+            <div class="footer-box">
+                <h4>Contacto</h4>
+                <p><i class="fab fa-whatsapp"></i> 62354424</p>
+                <p><i class="far fa-envelope"></i> soluciones360bolivia@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mallasilla, La Paz - Bolivia</p>
+            </div>
+            <div class="footer-box">
+                <h4>Síguenos</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+            </div>
+        </div>
+        <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS RESERVADOS.</div>
     </div>
-    <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA.</div>
 </footer>
 </body>
 </html>
