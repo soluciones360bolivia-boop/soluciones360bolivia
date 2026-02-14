@@ -11,6 +11,7 @@
         body { font-family: 'Roboto', sans-serif; background: var(--hueso); color: var(--azul); margin: 0; padding: 0; overflow-x: hidden; }
         .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
 
+        /* HERO */
         .hero { 
             height: 600px; 
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); 
@@ -22,21 +23,23 @@
         .hero h1 { font-size: 2.5rem; text-transform: uppercase; text-shadow: 2px 2px 12px #000; max-width: 900px; margin-bottom: 100px; }
 
         .intro-text { padding: 60px 0 20px; text-align: justify; line-height: 1.8; font-size: 1.15rem; }
+        
+        /* GRID DE SERVICIOS */
         .servicios-grid { display: grid; grid-template-columns: 1fr 280px; gap: 50px; padding-bottom: 60px; }
         .div-tit { color: var(--oro-m); font-size: 1.6rem; font-weight: 700; margin: 45px 0 20px; border-left: 8px solid var(--azul); padding-left: 20px; text-transform: uppercase; }
-        .srv-item { padding: 15px 0; border-bottom: 1px solid rgba(0,51,102,0.15); display: flex; align-items: center; font-size: 1.25rem; cursor: pointer; }
+        .srv-item { padding: 15px 0; border-bottom: 1px solid rgba(0,51,102,0.15); display: flex; align-items: center; font-size: 1.25rem; cursor: pointer; transition: 0.3s; }
+        .srv-item:hover { padding-left: 10px; background: rgba(0,0,0,0.02); }
         .srv-item i { color: var(--oro-m); width: 45px; }
 
         .img-container { width: 100%; text-align: center; margin: 40px 0; }
         .img-container img { width: 100%; height: auto; border-top: 4px solid var(--oro-m); border-bottom: 4px solid var(--oro-m); filter: grayscale(100%); }
 
-        .btn-float { position: fixed; bottom: 40px; right: 40px; background: var(--oro); color: var(--azul); width: 160px; height: 160px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; border: 6px solid var(--azul); z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.5); text-decoration: none; font-size: 1.1rem; }
+        .btn-float { position: fixed; bottom: 40px; right: 40px; background: var(--oro); color: var(--azul); width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; border: 6px solid var(--azul); z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.5); text-decoration: none; font-size: 1rem; }
 
         /* MODALES */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y: auto; }
-        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; border: 4px solid var(--oro-m); width: 90%; max-width: 750px; color: var(--azul); }
-        .modal-header { border-bottom: 2px solid var(--oro-m); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .close { font-size: 2.5rem; cursor: pointer; font-weight: bold; }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; }
+        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; border: 4px solid var(--oro-m); width: 90%; max-width: 750px; color: var(--azul); position: relative; }
+        .close { position: absolute; right: 20px; top: 10px; font-size: 2.5rem; cursor: pointer; font-weight: bold; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; }
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; font-family: 'Roboto'; box-sizing: border-box; }
@@ -45,104 +48,32 @@
         .cost-preview { background: #eee; padding: 15px; margin: 10px 0; border-left: 4px solid var(--azul); font-weight: bold; }
         .blindaje-box { font-size: 0.8rem; color: #444; background: #fffbe6; padding: 12px; border: 1px solid var(--oro-m); margin: 10px 0; line-height: 1.4; }
 
+        /* FOOTER */
         footer { background: var(--negro); color: #ccc; padding: 80px 0 40px; border-top: 6px solid var(--oro-m); }
         .f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 40px; }
         .f-box h4 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro-m); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; font-size: 1.3rem; }
         .f-box p { font-size: 1.1rem; line-height: 1.7; text-align: justify; }
         .contact-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; border-top: 1px solid #333; padding-top: 40px; font-size: 1.2rem; }
+        .contact-bar i { color: var(--oro); margin-right: 15px; }
     </style>
 </head>
 <body>
     <a href="https://wa.me/59162354424" class="btn-float">SOLICITAR<br>SERVICIO<br>AHORA</a>
 
-    <div id="modalLimpieza" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: LIMPIEZA</h3><span class="close" onclick="cerrarModal('modalLimpieza')">&times;</span></div>
-            <form>
-                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
-                <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
-                <div class="form-group"><label>Ubicación GPS</label><button type="button" class="btn-gps">Obtener Ubicación Actual</button><input type="url" placeholder="Link de Google Maps" required></div>
-                <div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div>
-                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><label>Metraje (m2) *</label><input type="number" required></div>
-                <div class="form-group"><label>Tipo de Limpieza</label><select><option>General</option><option>Profunda</option><option>Post-Obra</option></select></div>
-                <div class="form-group"><label>Insumos</label><select><option>Cliente provee</option><option>Empresa provee</option></select></div>
-                <div class="form-group"><label>Multimedia *</label><input type="file" required></div>
-                <div class="form-group"><label>Inicio del Servicio</label><input type="datetime-local" required></div>
-                <button type="submit" class="btn-submit">Generar ID Único</button>
-            </form>
-        </div>
-    </div>
+    <div id="modalLimpieza" class="modal"><div class="modal-content"><span class="close" onclick="cerrarModal('modalLimpieza')">&times;</span><h3>BRIEFING: LIMPIEZA</h3><form><div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div><button type="button" class="btn-gps">GPS ACTUAL</button><div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div><div class="form-group"><label>Metraje (m2)</label><input type="number" required></div><div class="form-group"><label>Multimedia</label><input type="file" required></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
 
-    <div id="modalAncianos" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: CUIDADO DE ANCIANOS</h3><span class="close" onclick="cerrarModal('modalAncianos')">&times;</span></div>
-            <form>
-                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
-                <div class="form-group"><label>Identificación del Asistido</label><input type="text" required></div>
-                <div class="form-group"><label>Nivel de Movilidad</label><select><option>Independiente</option><option>Movilidad Reducida</option><option>Encamado</option></select></div>
-                <div class="form-group"><label>Cuadro de Salud / Alergias *</label><textarea required></textarea></div>
-                <div class="form-group"><label>Contacto de Emergencia *</label><input type="tel" required></div>
-                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><label>Ubicación Maps</label><input type="url" required></div>
-                <div class="form-group"><label>Inicio del Servicio</label><input type="datetime-local" required></div>
-                <button type="submit" class="btn-submit">Generar ID Único</button>
-            </form>
-        </div>
-    </div>
+    <div id="modalAncianos" class="modal"><div class="modal-content"><span class="close" onclick="cerrarModal('modalAncianos')">&times;</span><h3>BRIEFING: CUIDADO DE ANCIANOS</h3><form><div class="form-group"><label>Nombre del Asistido</label><input type="text" required></div><div class="form-group"><label>Cuadro de Salud / Alergias *</label><textarea required></textarea></div><div class="form-group"><label>Contacto Emergencia *</label><input type="tel" required></div><div class="form-group"><label>Ubicación Maps</label><input type="url" required></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
 
-    <div id="modalMascotas" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: MASCOTAS</h3><span class="close" onclick="cerrarModal('modalMascotas')">&times;</span></div>
-            <form oninput="rM.innerText = parseInt(hM.value)*40">
-                <div class="form-group"><label>Nombre Mascota / Raza</label><input type="text" required></div>
-                <div class="form-group"><label>Carácter</label><select multiple><option>Sociable</option><option>Nervioso</option><option>Agresivo</option></select></div>
-                <div class="form-group"><label>Ubicación Maps</label><input type="url" required></div>
-                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><label>Estado Accesorios</label><input type="checkbox" required> Declaro accesorios en óptimo estado.</div>
-                <div class="form-group"><label>Duración (Horas)</label><input type="number" id="hM" value="1"></div>
-                <div class="cost-preview">Costo: <span id="rM">40</span> Bs.</div>
-                <button type="submit" class="btn-submit">Generar ID Único</button>
-            </form>
-        </div>
-    </div>
+    <div id="modalMascotas" class="modal"><div class="modal-content"><span class="close" onclick="cerrarModal('modalMascotas')">&times;</span><h3>BRIEFING: MASCOTAS</h3><form oninput="rM.innerText = parseInt(hM.value)*40"><div class="form-group"><label>Nombre Mascota / Raza</label><input type="text" required></div><div class="form-group"><label>Horas</label><input type="number" id="hM" value="1"></div><div class="cost-preview">Costo: <span id="rM">40</span> Bs.</div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
 
-    <div id="modalProtocolo" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: PROTOCOLO SOCIAL</h3><span class="close" onclick="cerrarModal('modalProtocolo')">&times;</span></div>
-            <form id="formProt">
-                <div class="form-group"><label>Tipo de Evento</label><select id="tEv" required><option value="">Seleccione...</option><option value="privado">Acompañamiento Privado</option><option>Corporativo</option></select></div>
-                <div class="form-group"><label>Código de Vestimenta</label><select onchange="document.getElementById('blV').style.display='block'"><option>Formal</option><option>Gala</option></select></div>
-                <div id="blV" class="blindaje-box" style="display:none;">S360 no se hace responsable por exclusión de acceso.</div>
-                <div class="blindaje-box">Servicio no incluye consumos ni entradas.</div>
-                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><label>Inicio del Servicio</label><input type="datetime-local" required></div>
-                <button type="submit" class="btn-submit">Generar ID Único</button>
-            </form>
-        </div>
-    </div>
+    <div id="modalProtocolo" class="modal"><div class="modal-content"><span class="close" onclick="cerrarModal('modalProtocolo')">&times;</span><h3>BRIEFING: PROTOCOLO SOCIAL</h3><form id="fP"><div class="form-group"><label>Tipo Evento</label><select id="tP"><option value="privado">Acompañamiento Privado</option><option>Corporativo</option></select></div><div class="form-group"><label>Vestimenta</label><select><option>Gala</option><option>Formal</option></select></div><div class="blindaje-box">No incluye consumos. Retorno Seguro activo en modalidad privado.</div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
 
-    <div id="modalConcierge" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: DIGITAL CONCIERGE</h3><span class="close" onclick="cerrarModal('modalConcierge')">&times;</span></div>
-            <form oninput="rC.innerText = parseInt(hC.value)*45">
-                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
-                <div class="form-group"><label>Dispositivo</label><input type="text" placeholder="Android, iOS, PC" required></div>
-                <div class="form-group"><label>Objetivo de Aprendizaje</label><textarea required></textarea></div>
-                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><input type="checkbox" required> Declaro tener contraseñas a mano.</div>
-                <div class="form-group"><label>Horas Solicitadas</label><input type="number" id="hC" value="1"></div>
-                <div class="blindaje-box"><strong>Privacidad:</strong> Prohibido almacenar contraseñas. <strong>Hardware:</strong> No incluye reparaciones físicas.</div>
-                <div class="cost-preview">Costo: <span id="rC">45</span> Bs.</div>
-                <button type="submit" class="btn-submit">Generar ID Único</button>
-            </form>
-        </div>
-    </div>
+    <div id="modalConcierge" class="modal"><div class="modal-content"><span class="close" onclick="cerrarModal('modalConcierge')">&times;</span><h3>BRIEFING: DIGITAL CONCIERGE</h3><form oninput="rC.innerText = parseInt(hC.value)*45"><div class="form-group"><label>Dispositivo</label><input type="text" required></div><div class="form-group"><label>Objetivo</label><textarea required></textarea></div><div class="form-group"><label>Horas</label><input type="number" id="hC" value="1"></div><div class="blindaje-box">Prohibido almacenar contraseñas.</div><div class="cost-preview">Costo: <span id="rC">45</span> Bs.</div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
 
-    <section class="hero">
+    <header class="hero">
         <div class="hero-top-elements"><div class="logo-hero">Soluciones 360°</div><div class="badge-hero">+ 2000 ESPECIALISTAS</div></div>
         <h1>GESTIONAMOS SUS REQUERIMIENTOS CON PERSONAL CAPACITADO Y VERIFICADO</h1>
-    </section>
+    </header>
 
     <div class="wrapper">
         <section class="intro-text">
@@ -153,38 +84,56 @@
 
         <div class="servicios-grid">
             <div>
-                <div class="div-tit">División 1: Asistencia</div>
-                <div class="srv-item" onclick="abrirModal('modalLimpieza')"><i class="fas fa-broom"></i>Limpieza</div>
-                <div class="srv-item" onclick="abrirModal('modalAncianos')"><i class="fas fa-user-nurse"></i>Cuidado de Ancianos</div>
-                <div class="srv-item" onclick="abrirModal('modalMascotas')"><i class="fas fa-paw"></i>Mascotas</div>
-                <div class="srv-item" onclick="abrirModal('modalProtocolo')"><i class="fas fa-glass-cheers"></i>Protocolo Social</div>
-                <div class="div-tit">División 2: Logística</div>
-                <div class="srv-item" onclick="abrirModal('modalConcierge')"><i class="fas fa-tablet-alt"></i>Digital Concierge</div>
-                <div class="srv-item"><i class="fas fa-car"></i>Transporte Seguro</div>
+                <div class="div-tit">Div. 1: Asistencia y Cuidado Personal</div>
+                <div class="srv-item" onclick="abrirModal('modalLimpieza')"><i class="fas fa-broom"></i>1. Limpieza</div>
+                <div class="srv-item" onclick="abrirModal('modalAncianos')"><i class="fas fa-user-nurse"></i>2. Cuidado de Ancianos</div>
+                <div class="srv-item" onclick="abrirModal('modalMascotas')"><i class="fas fa-paw"></i>3. Paseo y Cuidado de Mascotas</div>
+                <div class="srv-item" onclick="abrirModal('modalProtocolo')"><i class="fas fa-glass-cheers"></i>4. Protocolo Social</div>
+
+                <div class="div-tit">Div. 2: Logística y Gestión de Tiempo</div>
+                <div class="srv-item" onclick="abrirModal('modalConcierge')"><i class="fas fa-tablet-alt"></i>5. Digital Concierge</div>
+                <div class="srv-item"><i class="fas fa-car"></i>6. Transporte Seguro</div>
+                <div class="srv-item"><i class="fas fa-users"></i>7. Gestores de Filas</div>
+                <div class="srv-item"><i class="fas fa-shopping-basket"></i>8. Auxiliar de Compras</div>
+                <div class="srv-item"><i class="fas fa-car-side"></i>9. Retorno Seguro</div>
+                <div class="srv-item"><i class="fas fa-user-shield"></i>10. Seguridad Personal</div>
+
+                <div class="div-tit">Div. 3: Mantenimiento y Refacciones</div>
+                <div class="srv-item"><i class="fas fa-hammer"></i>11. Albañilería y Pintura</div>
+                <div class="srv-item"><i class="fas fa-faucet"></i>12. Plomería y Electricidad</div>
+                <div class="srv-item"><i class="fas fa-couch"></i>13. Carpintería y Melamina</div>
+                <div class="srv-item"><i class="fas fa-key"></i>14. Cerrajería</div>
+
+                <div class="div-tit">Div. 4: Asistencia y Gestión Profesional</div>
+                <div class="srv-item"><i class="fas fa-user-tie"></i>15. Asistente Personal</div>
+                <div class="srv-item"><i class="fas fa-briefcase"></i>16. Secretaría Administrativa</div>
+                <div class="srv-item"><i class="fas fa-file-invoice"></i>17. Trámites y Mensajería</div>
+                <div class="srv-item"><i class="fas fa-handshake"></i>18. Apoyo Comercial Eventual</div>
             </div>
-            <aside style="background:rgba(0,0,0,0.05); border:2px dashed var(--oro-m); margin-top:100px; height:500px; display:flex; align-items:center; justify-content:center; font-weight:700;">PUBLICIDAD</aside>
+            <aside style="background:rgba(0,0,0,0.05); border:2px dashed var(--oro-m); margin-top:100px; height:500px; display:flex; align-items:center; justify-content:center; font-weight:700; color:#999;">PUBLICIDAD</aside>
         </div>
 
-        <div class="img-container"><img src="https://i.ibb.co/PGwyf0KY/file-000000000a4c720ebfb48bcb331f258a.png"></div>
+        <div class="img-container"><img src="https://i.ibb.co/PGwyf0KY/file-000000000a4c720ebfb48bcb331f258a.png" alt="Obreros"></div>
     </div>
 
     <footer>
         <div class="wrapper">
             <div class="f-grid">
                 <div class="f-box"><h4>MISIÓN</h4><p>Brindar soluciones integrales y confiables a hogares, negocios y personas...</p></div>
-                <div class="f-box"><h4>VISIÓN</h4><p>Ser la empresa de servicios más confiable de Bolivia...</p></div>
+                <div class="f-box"><h4>VISIÓN</h4><p>Ser la empresa de servicios más confiable, innovadora y completa de Bolivia...</p></div>
             </div>
-            <div class="contact-bar"><div><i class="fab fa-whatsapp"></i>+591 62354424</div><div><i class="fas fa-globe"></i>COBERTURA NACIONAL</div></div>
+            <div class="contact-bar"><div><i class="fab fa-whatsapp"></i>+591 62354424</div><div><i class="fas fa-globe"></i>COBERTURA NACIONAL BOLIVIA</div></div>
         </div>
     </footer>
 
     <script>
         function abrirModal(id) { document.getElementById(id).style.display = 'block'; }
         function cerrarModal(id) { document.getElementById(id).style.display = 'none'; }
-        document.getElementById('formProt').onsubmit = function(e){
+        window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display='none'; }
+        document.getElementById('fP').onsubmit = function(e){
             e.preventDefault();
             let m = "ID: S360-PS" + Math.floor(Math.random()*999);
-            if(document.getElementById('tEv').value === 'privado') m += "\nRetorno Seguro Activado.";
+            if(document.getElementById('tP').value === 'privado') m += "\nProtocolo de Retorno Seguro Activado.";
             alert(m);
         }
     </script>
