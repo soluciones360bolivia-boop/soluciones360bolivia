@@ -18,17 +18,22 @@
         .srv-item { padding: 18px 0; border-bottom: 1px solid rgba(0,51,102,0.15); display: flex; align-items: center; font-size: 1.25rem; cursor: pointer; transition: 0.3s; }
         .srv-item:hover { background: rgba(197,160,89,0.1); padding-left: 10px; }
         .srv-item i { color: var(--oro-m); width: 45px; }
+        
         footer { background: var(--negro); color: #ccc; padding: 80px 0 40px; border-top: 6px solid var(--oro-m); }
         .f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 40px; }
-        .f-box h4 { color: var(--oro); border-bottom: 1px solid var(--oro-m); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
-        .f-box p { text-align: justify; line-height: 1.7; }
-        .garantia { border-top: 1px solid #333; padding-top: 40px; }
-        .modal-360 { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); overflow-y: auto; }
-        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; width: 90%; max-width: 700px; border: 4px solid var(--azul); color: var(--azul); }
-        input, textarea, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid var(--oro-m); box-sizing: border-box; }
-        label { font-weight: 700; display: block; margin-top: 10px; }
-        .btn-finalizar { background: var(--azul); color: white; padding: 20px; width: 100%; border: none; font-weight: 700; cursor: pointer; font-size: 1.2rem; }
-        .blindaje { background: #eee; padding: 15px; border-left: 4px solid red; font-size: 0.9rem; margin-top: 15px; }
+        .f-box h4 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro-m); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
+        .garantia { margin: 40px 0; border-top: 1px solid #333; padding-top: 40px; }
+        
+        /* MODAL */
+        .modal-360 { display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); overflow-y: auto; }
+        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; width: 90%; max-width: 750px; border: 5px solid var(--azul); color: var(--azul); border-radius: 4px; }
+        input, textarea, select { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid var(--oro-m); box-sizing: border-box; font-size: 1rem; }
+        label { font-weight: 700; display: block; margin-top: 12px; text-transform: uppercase; font-size: 0.85rem; }
+        .btn-gps { background: var(--oro-m); color: white; border: none; padding: 12px; width: 100%; font-weight: 700; cursor: pointer; margin: 10px 0; }
+        .btn-finalizar { background: var(--azul); color: white; padding: 25px; width: 100%; border: none; font-weight: 700; font-size: 1.3rem; cursor: pointer; margin-top: 25px; }
+        .blindaje-box { background: #f0f0f0; border-left: 5px solid #d9534f; padding: 15px; margin-top: 15px; font-size: 0.9rem; font-style: italic; }
+        .check-group { display: flex; align-items: center; gap: 10px; margin: 5px 0; }
+        .check-group input { width: auto; margin: 0; }
     </style>
 </head>
 <body>
@@ -40,13 +45,13 @@
     </section>
 
     <div class="wrapper">
-        <div class="div-tit">Asistencia y Cuidado Personal</div>
+        <div class="div-tit">Div. 1: Asistencia y Cuidado Personal</div>
         <div class="srv-item" onclick="abrir360(1)"><i class="fas fa-broom"></i>1. Limpieza</div>
         <div class="srv-item" onclick="abrir360(2)"><i class="fas fa-user-nurse"></i>2. Cuidado de Ancianos</div>
         <div class="srv-item" onclick="abrir360(3)"><i class="fas fa-paw"></i>3. Paseo y Cuidado de Mascotas</div>
         <div class="srv-item" onclick="abrir360(4)"><i class="fas fa-glass-cheers"></i>4. Protocolo Social</div>
 
-        <div class="div-tit">Logística y Gestión de Tiempo</div>
+        <div class="div-tit">Div. 2: Logística y Gestión de Tiempo</div>
         <div class="srv-item" onclick="abrir360(5)"><i class="fas fa-tablet-alt"></i>5. Digital Concierge</div>
         <div class="srv-item" onclick="abrir360(6)"><i class="fas fa-car"></i>6. Transporte Seguro</div>
         <div class="srv-item" onclick="abrir360(7)"><i class="fas fa-users"></i>7. Gestores de Filas</div>
@@ -54,7 +59,7 @@
         <div class="srv-item" onclick="abrir360(9)"><i class="fas fa-car-side"></i>9. Asistente de Retorno Seguro</div>
         <div class="srv-item" onclick="abrir360(10)"><i class="fas fa-user-shield"></i>10. Protección Preventiva</div>
 
-        <div class="div-tit">Mantenimiento Técnico</div>
+        <div class="div-tit">Div. 3: Mantenimiento y Refacciones Técnicas</div>
         <div class="srv-item" onclick="abrir360(11)"><i class="fas fa-hammer"></i>11. Albañilería</div>
         <div class="srv-item" onclick="abrir360(12)"><i class="fas fa-paint-roller"></i>12. Pintura</div>
         <div class="srv-item" onclick="abrir360(13)"><i class="fas fa-faucet"></i>13. Plomería</div>
@@ -62,22 +67,28 @@
         <div class="srv-item" onclick="abrir360(15)"><i class="fas fa-tools"></i>15. Carpintería y Melamina</div>
         <div class="srv-item" onclick="abrir360(16)"><i class="fas fa-key"></i>16. Cerrajería</div>
 
-        <div class="div-tit">Asistencia Profesional</div>
+        <div class="div-tit">Div. 4: Apoyo Ejecutivo y Mensajería</div>
         <div class="srv-item" onclick="abrir360(17)"><i class="fas fa-user-tie"></i>17. Asistente Personal</div>
         <div class="srv-item" onclick="abrir360(18)"><i class="fas fa-file-invoice"></i>18. Secretaría Administrativa</div>
         <div class="srv-item" onclick="abrir360(19)"><i class="fas fa-folder-open"></i>19. Trámites</div>
         <div class="srv-item" onclick="abrir360(20)"><i class="fas fa-motorcycle"></i>20. Mensajería</div>
-        <div class="srv-item" onclick="abrir360(21)"><i class="fas fa-briefcase"></i>21. Apoyo Comercial Eventual</div>
+        <div class="srv-item" onclick="abrir360(21)"><i class="fas fa-ad"></i>21. Apoyo Comercial Eventual</div>
     </div>
 
     <footer>
         <div class="wrapper">
             <div class="f-grid">
-                <div class="f-box"><h4>MISIÓN</h4><p>Brindar soluciones integrales y confiables mediante una red verificada...</p></div>
-                <div class="f-box"><h4>VISIÓN</h4><p>Ser la empresa de servicios más confiable de Bolivia liderando la formalización...</p></div>
+                <div class="f-box">
+                    <h4>MISIÓN</h4>
+                    <p>Brindar soluciones integrales y confiables a hogares, negocios y personas, mediante una red de prestadores de servicio verificados, capacitados y respaldados.</p>
+                </div>
+                <div class="f-box">
+                    <h4>VISIÓN</h4>
+                    <p>Ser la empresa de servicios más confiable, innovadora y completa de Bolivia, liderando la formalización de la mano de obra.</p>
+                </div>
             </div>
             <div class="garantia">
-                <h4 style="color:var(--oro)">RESPALDO Y GARANTÍA 360°</h4>
+                <h4 style="color: var(--oro);">RESPALDO Y GARANTÍA 360°</h4>
                 <p>Personal Verificado | Seguimiento Técnico | Garantía de Satisfacción</p>
             </div>
         </div>
@@ -85,44 +96,73 @@
 
     <div id="modal360" class="modal-360">
         <div class="modal-content">
-            <span onclick="cerrar360()" style="float:right; cursor:pointer; font-size:2.5rem;">&times;</span>
+            <span onclick="cerrar360()" style="float:right; cursor:pointer; font-size:3rem; line-height:1;">&times;</span>
             <div id="formDinámico"></div>
         </div>
     </div>
 
     <script>
         const d_gen = `
-            <h2>BRIEFING DE SERVICIO</h2>
-            <label>Nombre / Razón Social</label><input type="text" id="n" required>
-            <label>CI / NIT</label><input type="text" id="ci" required>
-            <button onclick="alert('GPS Vinculado')">📍 OBTENER UBICACIÓN GPS ACTUAL</button>
-            <label>Dirección Detallada (Piso, Ref, Fachada)</label><textarea required></textarea>
-            <label>WhatsApp de Gestión</label><input type="tel" required>
-            <hr style="border:1px solid var(--oro-m); margin:20px 0;">
+            <h2>DATOS GENERALES</h2>
+            <label>Nombre / Razón Social *</label><input type="text" required id="gn_nom">
+            <label>CI / NIT (Facturación y Contrato) *</label><input type="text" required id="gn_ci">
+            <button class="btn-gps" onclick="alert('GPS Vinculado exitosamente')">📍 OBTENER MI UBICACIÓN ACTUAL (GPS)</button>
+            <label>Dirección Detallada (Piso, Puerta, Edificio, Referencias) *</label><textarea required id="gn_dir"></textarea>
+            <label>WhatsApp de Gestión *</label><input type="tel" id="gn_wa" required>
+            <hr style="border:1.5px solid var(--oro-m); margin:30px 0;">
         `;
 
         function abrir360(id) {
-            let form = document.getElementById('formDinámico');
-            let content = d_gen;
+            let f = document.getElementById('formDinámico');
+            let c = d_gen;
 
             switch(id) {
-                case 1: content += `<h3>LIMPIEZA</h3><label>Metraje (m2) *</label><input type="number" required><label>Tipo</label><select><option>General</option><option>Profunda</option></select><label>Descripción *</label><textarea required></textarea><label>Multimedia *</label><input type="file" multiple required>`; break;
-                case 3: content += `<h3>PASEO Y CUIDADO DE MASCOTAS</h3><label>Nombre/Raza</label><input type="text" required><label>Carácter</label><select multiple><option>Sociable</option><option>Agresivo</option><option>Nervioso</option></select><label>Protocolo/Rutas</label><textarea required></textarea><label>Multimedia (Mascota)</label><input type="file">`; break;
-                case 4: content += `<h3>PROTOCOLO SOCIAL</h3><label>Tipo de Evento</label><select><option>Gala</option><option>Corporativo</option></select><label>Código Vestimenta</label><select><option>Formal</option><option>Uniforme S360</option></select><label>Instrucciones de Arribo</label><textarea required></textarea><div class="blindaje">El cliente cubre gastos de consumo del personal.</div>`; break;
-                case 6: content += `<h3>TRANSPORTE SEGURO</h3><label>Punto A (Origen)</label><input type="text" placeholder="Link Maps" required><label>Punto B (Destino)</label><input type="text" placeholder="Link Maps" required><label>Pasajeros</label><input type="text" required>`; break;
-                case 9: content += `<h3>RETORNO SEGURO</h3><label>Persona</label><input type="text" required><label>Foto Identificación (SIN FILTRO) *</label><input type="file" required><div class="blindaje">Si el personal no reconoce a la persona por filtros, se cancela el servicio.</div>`; break;
-                case 11: case 12: case 13: case 14: case 15: case 16: content += `<h3>SERVICIO TÉCNICO</h3><label>Descripción *</label><textarea required></textarea><label>Multimedia *</label><input type="file" required><div class="blindaje">Penalidad: Si rechaza cotización en sitio, cobro de Bs. 80.</div>`; break;
-                case 17: content += `<h3>ASISTENTE PERSONAL</h3><label>Tipo</label><select><option>Gestión Agenda</option><option>Viajes</option></select><label>Misión Detallada</label><textarea required></textarea><label>Tiempo</label><select><option>2h</option><option>4h</option><option>8h</option></select>`; break;
-                case 20: content += `<h3>MENSAJERÍA</h3><label>Tipo</label><select><option>Bancario</option><option>Firmas</option><option>Paquetes</option></select><label>Detalle</label><textarea required></textarea><label>Multimedia (Paquete) *</label><input type="file" required>`; break;
-                default: content += `<h3>DETALLE DE SERVICIO</h3><label>Descripción del Requerimiento *</label><textarea required></textarea><label>Multimedia *</label><input type="file" required>`;
-            }
+                case 1: c += `<h3>1. LIMPIEZA</h3>
+                    <label>Metraje (m2) *</label><input type="number" required>
+                    <label>Tipo de Limpieza</label><select><option>General</option><option>Profunda</option><option>Post-Obra</option></select>
+                    <label>Insumos</label><select><option>Cliente provee</option><option>Empresa provee</option></select>
+                    <label>Descripción del Servicio (OBLIGATORIO) *</label><textarea required placeholder="Hincapié en cocina, alfombras, etc."></textarea>
+                    <label>Multimedia (3 fotos o 1 video 20s) *</label><input type="file" multiple required>
+                    <label>Inicio del Servicio (Fecha y Hora) *</label><input type="datetime-local" required>
+                    <div class="blindaje-box">REGLA: Descripción vacía anula el ID Único. Recargo del 30% si el inicio es menor a 2h desde ahora.</div>`; break;
 
-            content += `<button class="btn-finalizar" onclick="alert('Generando ID Único...')">GENERAR SOLICITUD</button>`;
-            form.innerHTML = content;
-            document.getElementById('modal360').style.display = "block";
-        }
+                case 2: c += `<h3>2. CUIDADO DE ANCIANOS</h3>
+                    <label>Identificación del Asistido (Nombre/Edad)</label><input type="text" required>
+                    <label>Nivel de Movilidad</label><select><option>Independiente</option><option>Movilidad Reducida</option><option>Encamado</option></select>
+                    <label>Cuadro de Salud / Alergias (OBLIGATORIO) *</label><textarea required></textarea>
+                    <label>Alcance del Acompañamiento</label>
+                    <div class="check-group"><input type="checkbox"> Conversación/Compañía</div>
+                    <div class="check-group"><input type="checkbox"> Asistencia en Alimentación</div>
+                    <div class="check-group"><input type="checkbox"> Recordatorio de Medicación</div>
+                    <label>Protocolo de Familia (Rutinas/Preferencias) *</label><textarea required></textarea>
+                    <label>Contacto de Emergencia (Nombre/Celular 8 dígitos) *</label><input type="tel" required>
+                    <label>Google Maps (Link GPS Obligatorio) *</label><input type="text" required>
+                    <label>Inicio del Servicio</label><input type="datetime-local" required>
+                    <label>Tiempo Solicitado (Horas)</label><input type="number" required>
+                    <label>Carga de Archivos (Opcional: Recetas, etc.)</label><input type="file">
+                    <div class="blindaje-box">Soluciones 360° ofrece acompañamiento; no incluye enfermería, higiene íntima ni administración de medicación invasiva.</div>`; break;
 
-        function cerrar360() { document.getElementById('modal360').style.display = "none"; }
-    </script>
-</body>
-</html>
+                case 3: c += `<h3>3. CUIDADO DE MASCOTAS</h3>
+                    <label>Identificación (Nombre/Raza)</label><input type="text" required>
+                    <label>Carácter</label><select multiple><option>Sociable</option><option>Nervioso</option><option>Agresivo</option></select>
+                    <label>Seguridad</label><select><option>Bozal</option><option>Pechera</option><option>Collar Simple</option></select>
+                    <label>Responsables (Entrega / Recibe)</label><input type="text" required>
+                    <label>Celular Responsable Entrega *</label><input type="tel" required>
+                    <label>Protocolo / Rutas de Paseo</label><textarea></textarea>
+                    <div class="check-group"><input type="checkbox" required> Declaro que correa y collar están en óptimo estado.</div>
+                    <label>Google Maps (Link GPS) *</label><input type="text" required>
+                    <label>Multimedia (Mascota/Accesorios)</label><input type="file">
+                    <label>Inicio (Recogida)</label><input type="datetime-local" required>
+                    <label>Duración del Paseo</label><input type="text" placeholder="Ej: 1h 30min">`; break;
+
+                case 4: c += `<h3>4. PROTOCOLO SOCIAL</h3>
+                    <label>Tipo de Evento</label><select><option>Corporativo</option><option>Social/Gala</option><option>Acompañamiento Privado</option></select>
+                    <label>Rol del Asistente *</label><textarea required></textarea>
+                    <label>Código de Vestimenta</label><select><option>Formal</option><option>Gala</option><option>Business Casual</option><option>Uniforme S360</option></select>
+                    <label>Contacto Recepción (Nombre/Celular) *</label><input type="text" required>
+                    <label>Instrucciones / Temas Prohibidos</label><textarea></textarea>
+                    <label>Ubicación GPS (Link Maps) *</label><input type="text" required>
+                    <label>Multimedia (Invitación/Flyer)</label><input type="file">
+                    <label>Inicio del Servicio</label><input type="datetime-local" required>
+                    <div class="blindaje-box">Servicio máx 4h. El cliente cubre consumo del asistente. Protocolo de Retorno Seguro activo para el personal tras el evento.</div>`; break;
+ 
