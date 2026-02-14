@@ -55,7 +55,11 @@
         .contact-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; border-top: 1px solid #333; padding-top: 40px; font-size: 1.2rem; }
         .contact-bar a { color: #ccc; text-decoration: none; }
         .contact-bar i { color: var(--oro); margin-right: 15px; }
-    </style>
+  .modal-servicio { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); overflow-y: auto; }
+.modal-content { background: var(--hueso); margin: 5% auto; padding: 30px; border: 5px solid var(--azul); width: 90%; max-width: 600px; }
+.modal-content input, .modal-content textarea, .modal-content select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid var(--oro-m); box-sizing: border-box; }
+.btn-enviar { background: var(--azul); color: white; padding: 20px; width: 100%; font-weight: 700; border: none; cursor: pointer; }
+  </style>
 </head>
 <body>
     <a href="https://wa.me/59162354424" class="btn-float">SOLICITAR<br>SERVICIO<br>AHORA</a>
@@ -78,7 +82,10 @@
         <div class="servicios-grid">
             <div>
                 <div class="div-tit">Asistencia y Cuidado Personal</div>
-                <div class="srv-item"><i class="fas fa-broom"></i>Limpieza</div>
+                <div class="srv-item" onclick="abrirServicio('limpieza')" style="cursor:pointer; background: rgba(197,160,89,0.1);">
+    <i class="fas fa-broom"></i>Limpieza (Clic para Briefing)
+</div>
+
                 <div class="srv-item"><i class="fas fa-user-nurse"></i>Cuidado de Ancianos</div>
                 <div class="srv-item"><i class="fas fa-paw"></i>Paseo y Cuidado de Mascotas</div>
                 <div class="srv-item"><i class="fas fa-glass-cheers"></i>Protocolo Social</div>
@@ -157,6 +164,39 @@
             <p style="text-align: center; margin-top: 50px; font-size: 1rem; opacity: 0.6;">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS REGISTRADOS.</p>
         </div>
     </footer>
+<div id="modalCerebro" class="modal-servicio">
+    <div class="modal-content">
+        <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size:2rem;">&times;</span>
+        <div id="contenedorBriefing"></div>
+    </div>
+</div>
+
+<script>
+function abrirServicio(tipo) {
+    document.getElementById('modalCerebro').style.display = "block";
+    if(tipo === 'limpieza') {
+        document.getElementById('contenedorBriefing').innerHTML = `
+            <h2 style="color:var(--azul)">BRIEFING DE LIMPIEZA</h2>
+            <p><strong>DATOS GENERALES:</strong></p>
+            <input type="text" id="nombre" placeholder="Nombre / Razón Social" required>
+            <input type="text" id="identidad" placeholder="CI / NIT" required>
+            <button type="button" onclick="alert('Obteniendo GPS...')">📍 OBTENER UBICACIÓN GPS</button>
+            <textarea id="direccion" placeholder="Dirección Detallada (Piso, Edificio, Referencias)" required></textarea>
+            <input type="tel" id="whatsapp" placeholder="WhatsApp de Gestión" required>
+            <hr>
+            <p><strong>DATOS ESPECÍFICOS:</strong></p>
+            <input type="number" id="metraje" placeholder="Metraje (m2)" required>
+            <select id="tipo_l"><option>General</option><option>Profunda</option><option>Post-Obra</option></select>
+            <select id="insumos"><option>Cliente provee</option><option>Empresa provee</option></select>
+            <textarea id="desc" placeholder="Descripción Detallada (OBLIGATORIO)" required></textarea>
+            <label>Inicio del Servicio:</label>
+            <input type="datetime-local" id="fecha_inicio" required>
+            <button class="btn-enviar" onclick="alert('Generando ID Único y enviando...')">GENERAR SOLICITUD</button>
+        `;
+    }
+}
+function cerrarModal() { document.getElementById('modalCerebro').style.display = "none"; }
+</script>
 </body>
 </html>
  
