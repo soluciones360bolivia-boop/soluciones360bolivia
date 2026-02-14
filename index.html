@@ -45,7 +45,7 @@
 
         .btn-float { position: fixed; bottom: 40px; right: 40px; background: var(--oro); color: var(--azul); width: 160px; height: 160px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; border: 6px solid var(--azul); z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.5); text-decoration: none; font-size: 1.1rem; }
 
-        /* MODALES */
+        /* MODALES BRIEFINGS */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y: auto; }
         .modal-content { background: var(--hueso); margin: 5% auto; padding: 30px; border: 4px solid var(--oro-m); width: 90%; max-width: 700px; color: var(--azul); }
         .modal-header { border-bottom: 2px solid var(--oro-m); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
@@ -55,7 +55,7 @@
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; font-family: 'Roboto'; }
         .btn-gps { background: var(--azul); color: white; padding: 8px 15px; border: none; margin-bottom: 10px; cursor: pointer; }
         .btn-submit { background: var(--oro); color: var(--azul); font-weight: 700; padding: 15px; border: 2px solid var(--azul); width: 100%; cursor: pointer; font-size: 1.1rem; }
-        .blindaje { font-size: 0.75rem; color: #666; font-style: italic; margin-top: 15px; padding: 10px; border-left: 3px solid var(--oro-m); background: #eee; }
+        .cost-preview { background: #eee; padding: 10px; margin: 10px 0; border-left: 4px solid var(--azul); font-weight: bold; }
 
         footer { background: var(--negro); color: #ccc; padding: 80px 0 40px; border-top: 6px solid var(--oro-m); }
         .f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 40px; }
@@ -77,7 +77,7 @@
     
     <div id="modalLimpieza" class="modal">
         <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: LIMPIEZA</h3><span class="close" onclick="cerrarModal('modalLimpieza')">&times;</span></div>
+            <div class="modal-header"><h3>BRIEFING: LIMPIEZA</h3><span class="close" onclick="cerrarModal('modalLimpieza')">×</span></div>
             <form id="formLimpieza">
                 <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
                 <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
@@ -86,7 +86,7 @@
                 <div class="form-group"><label>Metraje (m2) *</label><input type="number" required></div>
                 <div class="form-group"><label>Tipo de Limpieza</label><select required><option>General</option><option>Profunda</option><option>Post-Obra</option></select></div>
                 <div class="form-group"><label>Insumos</label><select required><option>Cliente provee</option><option>Empresa provee</option></select></div>
-                <div class="form-group"><label>Descripción del Servicio (Obligatorio) *</label><textarea id="descL" rows="3" required></textarea></div>
+                <div class="form-group"><label>Descripción del Servicio *</label><textarea id="descL" rows="3" required></textarea></div>
                 <div class="form-group"><label>Multimedia *</label><input type="file" required></div>
                 <div class="form-group"><label>Inicio del Servicio *</label><input type="datetime-local" id="fechaL" required></div>
                 <button type="submit" class="btn-submit">Generar ID Único</button>
@@ -96,23 +96,52 @@
 
     <div id="modalAncianos" class="modal">
         <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: CUIDADO DE ANCIANOS</h3><span class="close" onclick="cerrarModal('modalAncianos')">&times;</span></div>
+            <div class="modal-header"><h3>BRIEFING: CUIDADO DE ANCIANOS</h3><span class="close" onclick="cerrarModal('modalAncianos')">×</span></div>
             <form id="formAncianos">
                 <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
                 <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
-                <div class="form-group"><label>Dirección Detallada</label><textarea required placeholder="Piso, Puerta, Edificio, Referencias"></textarea></div>
+                <div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div>
                 <div class="form-group"><label>WhatsApp de Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><label>1. Identificación del Asistido (Nombre/Edad)</label><input type="text" required></div>
+                <div class="form-group"><label>1. Identificación del Asistido</label><input type="text" required></div>
                 <div class="form-group"><label>2. Nivel de Movilidad</label><select required><option>Independiente</option><option>Movilidad Reducida</option><option>Encamado</option></select></div>
-                <div class="form-group"><label>3. Cuadro de Salud / Alergias (Obligatorio)</label><textarea required placeholder="Diagnósticos, alergias o cuidados críticos"></textarea></div>
-                <div class="form-group"><label>4. Alcance del Acompañamiento</label><select multiple required><option>Conversación/Compañía</option><option>Asistencia en Alimentación</option><option>Recordatorio de Medicación</option><option>Vigilancia de Sueño</option></select></div>
-                <div class="form-group"><label>5. Protocolo de Familia</label><textarea id="protoA" placeholder="Rutinas familiares, trato o prohibiciones"></textarea></div>
-                <div class="form-group"><label>6. Contacto de Emergencia (Nombre/Cel) *</label><input type="text" id="emergenciaNom" placeholder="Nombre Familiar" required><input type="tel" id="emergenciaCel" placeholder="Celular (8 dígitos)" required></div>
-                <div class="form-group"><label>8. Ubicación (Link Google Maps)</label><input type="url" required placeholder="https://maps.google.com/..."></div>
+                <div class="form-group"><label>3. Cuadro de Salud / Alergias *</label><textarea required></textarea></div>
+                <div class="form-group"><label>5. Protocolo de Familia</label><textarea id="protoA"></textarea></div>
+                <div class="form-group"><label>6. Contacto de Emergencia *</label><input type="tel" id="emergenciaCel" placeholder="8 dígitos" required></div>
+                <div class="form-group"><label>8. Ubicación (Link Maps)</label><input type="url" required></div>
                 <div class="form-group"><label>9. Inicio del Servicio</label><input type="datetime-local" required></div>
-                <div class="form-group"><label>10. Tiempo Solicitado (Horas)</label><input type="number" required></div>
-                <div class="form-group"><label>11. Archivos opcionales (Recetas, etc.)</label><input type="file"></div>
-                <div class="blindaje">Soluciones 360° ofrece un servicio de acompañamiento y vigilancia; no incluye procedimientos de enfermería, higiene íntima ni administración de medicación invasiva.</div>
+                <div class="form-group"><label>10. Tiempo Solicitado (Hrs)</label><input type="number" required></div>
+                <button type="submit" class="btn-submit">Generar ID Único</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalMascotas" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>BRIEFING: CUIDADO DE MASCOTAS</h3><span class="close" onclick="cerrarModal('modalMascotas')">×</span></div>
+            <form id="formMascotas">
+                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
+                <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
+                <div class="form-group">
+                    <label>Ubicación GPS</label>
+                    <button type="button" class="btn-gps" onclick="alert('Capturando GPS...')">Obtener mi ubicación actual</button>
+                    <input type="url" placeholder="Pegar Link de Google Maps (Manual)" required>
+                </div>
+                <div class="form-group"><label>Dirección Detallada</label><textarea placeholder="Piso, Puerta, Edificio, Fachada, Referencias" required></textarea></div>
+                <div class="form-group"><label>WhatsApp de Gestión</label><input type="tel" value="+591" required></div>
+                
+                <div class="form-group"><label>1. Identificación del Ejemplar (Nombre/Raza)</label><input type="text" required></div>
+                <div class="form-group"><label>2. Carácter y Conducta</label><select multiple required><option>Sociable</option><option>Nervioso</option><option>Agresivo</option><option>Miedo a ruidos</option></select></div>
+                <div class="form-group"><label>3. Requerimientos de Seguridad</label><select multiple required><option>Requiere Bozal</option><option>Usa Pechera</option><option>Usa Collar Simple</option></select></div>
+                <div class="form-group"><label>4. Responsables (Entrega / Recibe)</label><input type="text" placeholder="Ej: Entrega Juan / Recibe María" required></div>
+                <div class="form-group"><label>5. Celular Dueño/Responsable *</label><input type="tel" id="celMascota" required></div>
+                <div class="form-group"><label>7. Protocolo / Instrucciones</label><textarea placeholder="Rutas, comandos o prohibiciones"></textarea></div>
+                <div class="form-group"><label>8. Estado de Accesorios</label><input type="checkbox" required style="width: auto;"> Declaro que la correa y collar están en óptimo estado.</div>
+                <div class="form-group"><label>9. Veterinaria de Referencia</label><input type="text"></div>
+                <div class="form-group"><label>11. Multimedia (Opcional)</label><input type="file"></div>
+                <div class="form-group"><label>12. Inicio del Servicio</label><input type="datetime-local" required></div>
+                <div class="form-group"><label>13. Duración (Horas)</label><input type="number" id="hrsMascota" value="1" min="1" required></div>
+                
+                <div class="cost-preview">Costo Estimado: <span id="totalMascota">40</span> Bs.</div>
                 <button type="submit" class="btn-submit">Generar ID Único</button>
             </form>
         </div>
@@ -138,9 +167,8 @@
                 <div class="div-tit">Asistencia y Cuidado Personal</div>
                 <div class="srv-item" onclick="abrirModal('modalLimpieza')"><i class="fas fa-broom"></i>Limpieza</div>
                 <div class="srv-item" onclick="abrirModal('modalAncianos')"><i class="fas fa-user-nurse"></i>Cuidado de Ancianos</div>
-                <div class="srv-item"><i class="fas fa-paw"></i>Paseo y Cuidado de Mascotas</div>
+                <div class="srv-item" onclick="abrirModal('modalMascotas')"><i class="fas fa-paw"></i>Paseo y Cuidado de Mascotas</div>
                 <div class="srv-item"><i class="fas fa-glass-cheers"></i>Protocolo Social</div>
-
                 <div class="div-tit">Logística y Gestión de Tiempo</div>
                 <div class="srv-item"><i class="fas fa-tablet-alt"></i>Digital Concierge</div>
                 <div class="srv-item"><i class="fas fa-car"></i>Transporte Seguro</div>
@@ -148,7 +176,6 @@
                 <div class="srv-item"><i class="fas fa-shopping-basket"></i>Auxiliar de Compras</div>
                 <div class="srv-item"><i class="fas fa-car-side"></i>Retorno Seguro</div>
                 <div class="srv-item"><i class="fas fa-user-shield"></i>Seguridad Personal</div>
-
                 <div class="div-tit">Mantenimiento y Refacciones Técnicas</div>
                 <div class="srv-item"><i class="fas fa-hammer"></i>Albañilería</div>
                 <div class="srv-item"><i class="fas fa-paint-roller"></i>Pintura</div>
@@ -156,7 +183,6 @@
                 <div class="srv-item"><i class="fas fa-bolt"></i>Electricidad</div>
                 <div class="srv-item"><i class="fas fa-hammer"></i>Carpintería y Melamina</div>
                 <div class="srv-item"><i class="fas fa-key"></i>Cerrajería</div>
-
                 <div class="div-tit">Apoyo Ejecutivo</div>
                 <div class="srv-item"><i class="fas fa-user-tie"></i>Asistente Personal</div>
                 <div class="srv-item"><i class="fas fa-user-edit"></i>Secretaría Administrativa</div>
@@ -179,36 +205,64 @@
     <footer>
         <div class="wrapper">
             <div class="f-grid">
-                <div class="f-box"><h4>MISIÓN</h4><p>Brindar soluciones integrales y confiables a hogares, negocios y personas...</p></div>
-                <div class="f-box"><h4>VISIÓN</h4><p>Ser la empresa de servicios más confiable, innovadora y completa de Bolivia...</p></div>
+                <div class="f-box">
+                    <h4>MISIÓN</h4>
+                    <p>Brindar soluciones integrales y confiables a hogares, negocios y personas, mediante una red de prestadores de servicio verificados, capacitados y respaldados. Garantizamos calidad, seguridad jurídica, puntualidad y excelencia en cada servicio, creando un ecosistema donde tanto clientes como trabajadores encuentran apoyo, orden y oportunidades reales de crecimiento.</p>
+                </div>
+                <div class="f-box">
+                    <h4>VISIÓN</h4>
+                    <p>Ser la empresa de servicios más confiable, innovadora y completa de Bolivia, liderando la formalización de la mano de obra, elevando los estándares de calidad del sector y convirtiéndonos en la plataforma de referencia para clientes que buscan seguridad y eficiencia, y para trabajadores que buscan oportunidades reales, dignas y respaldadas.</p>
+                </div>
             </div>
+
+            <div class="f-grid">
+                <div class="f-box">
+                    <h4>ÉTICA Y RESPONSABILIDAD</h4>
+                    <p>Nuestra red se fundamenta en un estricto compromiso ético y de responsabilidad profesional. Garantizamos integridad técnica, puntualidad y respeto absoluto a la privacidad del cliente bajo la normativa civil boliviana vigente.</p>
+                </div>
+                <div class="f-box">
+                    <h4>INFORMACIÓN LEGAL</h4>
+                    <p>Soluciones 360° es una plataforma de gestión de servicios regulados bajo normativa civil boliviana. Operamos bajo el respaldo jurídico de la Declaración Jurada y el Contrato Civil de Prestación de Servicios Independientes.</p>
+                </div>
+            </div>
+
+            <div class="garantia">
+                <h4 style="color: var(--oro); text-transform: uppercase;">RESPALDO Y GARANTÍA 360°</h4>
+                <p>En Soluciones 360°, no solo conectamos personas, protegemos tu inversión y tu tranquilidad. Cada uno de nuestros servicios cuenta con un triple respaldo:</p>
+                <ul class="garantia-list">
+                    <li><i class="fas fa-user-check"></i><span><strong>Personal Verificado:</strong> Todo prestador de servicio ha pasado por un riguroso proceso de selección que incluye verificación de antecedentes e identidad real.</span></li>
+                    <li><i class="fas fa-satellite-dish"></i><span><strong>Seguimiento Técnico:</strong> Monitoreamos la ejecución de cada trabajo desde el inicio hasta la entrega final para asegurar el cumplimiento de estándares.</span></li>
+                    <li><i class="fas fa-shield-alt"></i><span><strong>Garantía de Satisfacción:</strong> Si el servicio técnico no cumple con lo acordado, contamos con un protocolo de respuesta inmediata para ajustes sin costo adicional.</span></li>
+                </ul>
+            </div>
+
             <div class="contact-bar">
+                <div><i class="fas fa-envelope"></i><a href="mailto:soluciones360bolivia@gmail.com">soluciones360bolivia@gmail.com</a></div>
+                <div><i class="fab fa-facebook"></i><a href="#">Soluciones 360° Bolivia</a></div>
+                <div><i class="fab fa-instagram"></i><a href="#">@soluciones360_bo</a></div>
                 <div><i class="fab fa-whatsapp"></i><span>+591 62354424</span></div>
+                <div><i class="fas fa-globe"></i><span>COBERTURA NACIONAL BOLIVIA</span></div>
             </div>
+            <p style="text-align: center; margin-top: 50px; font-size: 1rem; opacity: 0.6;">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS REGISTRADOS.</p>
         </div>
     </footer>
 
     <script>
         function abrirModal(id) { document.getElementById(id).style.display = 'block'; }
         function cerrarModal(id) { document.getElementById(id).style.display = 'none'; }
+        
+        // Calculador Mascota
+        document.getElementById('hrsMascota').oninput = function() {
+            document.getElementById('totalMascota').innerText = this.value * 40;
+        }
 
-        // Lógica Limpieza
-        document.getElementById('formLimpieza').onsubmit = function(e) {
+        document.getElementById('formMascotas').onsubmit = function(e) {
             e.preventDefault();
-            const fSrv = new Date(document.getElementById('fechaL').value);
-            const dif = (fSrv - new Date()) / (1000 * 60 * 60);
-            alert("ID: S360-L" + Math.floor(Math.random()*9999) + (dif < 4 ? "\nRecargo +30% por Urgencia" : ""));
-        };
-
-        // Lógica Ancianos
-        document.getElementById('formAncianos').onsubmit = function(e) {
-            e.preventDefault();
-            const proto = document.getElementById('protoA').value;
-            const cel = document.getElementById('emergenciaCel').value;
-            if (!proto) { alert("Por favor, indique preferencias de trato o rutinas para un servicio personalizado."); return; }
-            if (!/^[67][0-9]{7}$/.test(cel)) { alert("El contacto de emergencia debe ser un número celular boliviano válido (8 dígitos)."); return; }
-            alert("ID: S360-A" + Math.floor(Math.random()*9999) + "\nServicio Validado bajo Cláusula de Acompañamiento.");
+            const cel = document.getElementById('celMascota').value;
+            if(!/^[67][0-9]{7}$/.test(cel)) { alert("Celular inválido."); return; }
+            alert("ID: S360-M" + Math.floor(Math.random()*9999) + "\nCosto: " + (document.getElementById('hrsMascota').value * 40) + " Bs.");
         };
     </script>
 </body>
 </html>
+ 
