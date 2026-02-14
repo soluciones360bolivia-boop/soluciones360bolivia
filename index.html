@@ -10,171 +10,111 @@
         :root { 
             --azul-tinta: #003366; 
             --oro: #C5A059; 
-            --oro-brillante: #D4AF37; 
+            --hueso-viejo: #F5F5DC; 
             --blanco-puro: #FFFFFF;
-            --gris-claro: #f4f7f6;
             --negro-footer: #02060c;
         }
         
         body { 
             font-family: 'Roboto', sans-serif; 
-            background: var(--blanco-puro); 
+            background: var(--hueso-viejo); 
             color: var(--azul-tinta); 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden; 
+            margin: 0; padding: 0; overflow-x: hidden; 
         }
         
-        /* CABECERA CON LOGO AZUL Y CUADRO DE ESPECIALISTAS */
+        /* CABECERA REFINADA */
         .header-top { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 20px 5%; 
-            z-index: 10; 
-            box-sizing: border-box; 
+            position: absolute; top: 0; left: 0; width: 100%; 
+            display: flex; justify-content: space-between; align-items: flex-start; 
+            padding: 25px 5%; z-index: 10; box-sizing: border-box; 
         }
-        .logo-text { font-size: 1.8rem; font-weight: 700; color: var(--azul-tinta); text-shadow: none; }
+        .logo-text { font-size: 1.8rem; font-weight: 700; color: var(--azul-tinta); }
         
         .badge-especialistas {
-            background: var(--oro);
-            color: var(--blanco-puro);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            text-align: center;
             border: 2px solid var(--azul-tinta);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 10px 20px;
+            background: rgba(197, 160, 89, 0.1);
         }
+        .badge-especialistas .grande { font-size: 1.8rem; font-weight: 700; display: block; line-height: 1; }
+        .badge-especialistas .pequeno { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 5px; display: block; }
 
-        /* HERO AJUSTADO */
+        /* HERO SIN RECUADRO EN TEXTO */
         .hero { 
-            height: 450px; 
-            background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); 
-            background-size: cover; 
-            background-position: top center; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: flex-end; 
-            align-items: center; 
-            border-bottom: 5px solid var(--oro); 
-            text-align: center; 
-            padding: 0 20px 40px 20px; 
+            height: 500px; 
+            background: linear-gradient(rgba(245,245,220,0.1), rgba(245,245,220,0.1)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); 
+            background-size: cover; background-position: top center; 
+            display: flex; flex-direction: column; justify-content: flex-end; align-items: center; 
+            border-bottom: 5px solid var(--oro); text-align: center; padding: 0 20px 50px 20px; 
         }
         .hero h1 { 
-            font-size: 2rem; 
-            text-transform: uppercase; 
-            color: var(--azul-tinta); 
-            background: rgba(255,255,255,0.8);
-            padding: 15px 30px;
-            border-radius: 8px;
-            max-width: 850px; 
-            margin: 0; 
-            border: 2px solid var(--oro);
+            font-size: 2.1rem; text-transform: uppercase; color: var(--azul-tinta); 
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            max-width: 900px; margin: 0; 
         }
         
         .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5%; width: 100%; box-sizing: border-box; }
 
-        /* INTRODUCCIÓN CLARA */
+        /* INTRODUCCIÓN - LETRA MÁS GRANDE */
         .intro-sec { padding: 60px 0; }
-        .intro-text p { margin-bottom: 25px; line-height: 1.8; text-align: justify; font-size: 1.15rem; font-weight: 400; }
+        .intro-text p { margin-bottom: 25px; line-height: 1.8; text-align: justify; font-size: 1.25rem; }
 
-        /* LISTA DE SERVICIOS MINIMALISTA */
+        /* SERVICIOS SIN "DIVISIONES" */
         .section-subtitle { 
-            color: var(--azul-tinta); 
-            font-size: 2rem; 
-            margin: 40px 0 20px; 
-            text-transform: uppercase; 
-            border-bottom: 3px solid var(--oro); 
-            display: inline-block; 
-            font-weight: 700;
+            color: var(--azul-tinta); font-size: 2.2rem; margin: 40px 0 20px; 
+            text-transform: uppercase; border-bottom: 3px solid var(--oro); 
+            display: inline-block; font-weight: 700;
         }
         .main-grid { display: grid; grid-template-columns: 1fr 280px; gap: 40px; padding-bottom: 60px; }
+        
         .div-title { 
-            color: var(--oro-brillante); 
-            font-size: 1.2rem; 
-            font-weight: 700; 
-            margin: 35px 0 15px; 
-            border-left: 6px solid var(--azul-tinta); 
-            padding-left: 15px; 
-            text-transform: uppercase;
+            color: var(--oro); font-size: 1.3rem; font-weight: 700; 
+            margin: 40px 0 15px; border-left: 6px solid var(--azul-tinta); 
+            padding-left: 15px; text-transform: uppercase;
         }
         .item-list { 
-            padding: 12px 0; 
-            border-bottom: 1px solid #eee;
-            display: flex; 
-            align-items: center; 
-            transition: 0.3s;
+            padding: 14px 0; border-bottom: 1px solid rgba(0,51,102,0.1);
+            display: flex; align-items: center; 
         }
-        .item-list:hover { padding-left: 10px; }
-        .item-list i { color: var(--oro); width: 40px; font-size: 1.3rem; text-align: center; margin-right: 15px; }
-        .item-list span { font-size: 1.1rem; font-weight: 400; }
+        .item-list i { color: var(--oro); width: 40px; font-size: 1.4rem; text-align: center; margin-right: 15px; }
+        .item-list span { font-size: 1.15rem; }
         
         /* PUBLICIDAD */
         .ads-vertical-container { display: flex; flex-direction: column; gap: 20px; padding-top: 100px; }
         .ads-vertical { 
-            background: var(--gris-claro); 
-            border: 2px dashed var(--oro); 
-            padding: 40px 20px; 
-            text-align: center; 
-            color: var(--oro); 
-            font-weight: 700; 
-            font-size: 0.85rem; 
-            text-transform: uppercase;
+            background: rgba(0,51,102,0.05); border: 2px dashed var(--oro); 
+            padding: 40px 20px; text-align: center; color: var(--oro); 
+            font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
         }
 
-        /* IMAGEN B/N */
-        .full-width-bn { width: 100vw; margin: 40px 0 0 0; overflow: hidden; border-top: 3px solid var(--oro); border-bottom: 3px solid var(--oro); }
-        .full-width-bn img { width: 100%; height: auto; display: block; filter: grayscale(100%); opacity: 0.9; }
+        .full-width-bn { width: 100vw; overflow: hidden; border-top: 3px solid var(--oro); border-bottom: 3px solid var(--oro); }
+        .full-width-bn img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
 
-        /* FOOTER OSCURO (MANTENIDO) */
-        footer { background: var(--negro-footer); padding: 70px 5% 30px; border-top: 5px solid var(--oro); width: 100%; box-sizing: border-box; color: #ccc; }
+        /* FOOTER OSCURO */
+        footer { background: var(--negro-footer); padding: 70px 5% 30px; border-top: 5px solid var(--oro); color: #ccc; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; }
-        .footer-box h4 { color: var(--oro); text-transform: uppercase; margin-bottom: 25px; font-size: 1rem; border-left: 4px solid var(--oro); padding-left: 15px; }
-        .footer-box p { font-size: 0.9rem; line-height: 1.7; text-align: justify; margin-bottom: 15px; }
-        .copyright { 
-            text-align: center; 
-            padding-top: 30px; 
-            margin-top: 50px; 
-            border-top: 1px solid rgba(255,255,255,0.1); 
-            color: var(--oro); 
-            font-size: 0.85rem; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 1.5px; 
-        }
+        .footer-box h4 { color: var(--oro); text-transform: uppercase; margin-bottom: 25px; border-left: 4px solid var(--oro); padding-left: 15px; }
+        .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
 
         .btn-float { 
-            position: fixed; 
-            bottom: 30px; 
-            right: 30px; 
-            background: var(--azul-tinta); 
-            color: var(--oro-brillante); 
-            padding: 18px 30px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            box-shadow: 0 10px 25px rgba(0,51,102,0.3); 
-            z-index: 100; 
-            border: 2px solid var(--oro); 
-            transition: 0.3s;
+            position: fixed; bottom: 30px; right: 30px; background: var(--azul-tinta); 
+            color: var(--oro); padding: 18px 30px; border-radius: 50px; text-decoration: none; 
+            font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 100; border: 2px solid var(--oro); 
         }
-        .btn-float:hover { transform: translateY(-5px); background: var(--oro); color: var(--azul-tinta); }
 
         @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } .ads-vertical-container { display: none; } }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/59162354424" class="btn-float"><i class="fab fa-whatsapp"></i> SOLICITAR SERVICIO AHORA</a>
+<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO AHORA</a>
 
 <div class="header-top">
     <div class="logo-text">Soluciones 360°</div>
-    <div class="badge-especialistas">+ 2000 ESPECIALISTAS VERIFICADOS EN TODA BOLIVIA</div>
+    <div class="badge-especialistas">
+        <span class="grande">+ 2000</span>
+        <span class="pequeno">especialistas registrados</span>
+    </div>
 </div>
 
 <section class="hero">
@@ -193,13 +133,13 @@
 
         <div class="main-grid">
             <div class="servicios-content">
-                <div class="div-title">DIVISIÓN 1: ASISTENCIA Y CUIDADO PERSONAL</div>
+                <div class="div-title">Asistencia y cuidado personal</div>
                 <div class="item-list"><i class="fas fa-broom"></i><span>Limpieza</span></div>
                 <div class="item-list"><i class="fas fa-user-nurse"></i><span>Cuidado de Ancianos</span></div>
                 <div class="item-list"><i class="fas fa-paw"></i><span>Paseo y Cuidado de Mascotas</span></div>
                 <div class="item-list"><i class="fas fa-glass-cheers"></i><span>Protocolo Social</span></div>
                 
-                <div class="div-title">DIVISIÓN 2: LOGÍSTICA Y GESTIÓN DE TIEMPO</div>
+                <div class="div-title">Logística y gestión de tiempo</div>
                 <div class="item-list"><i class="fas fa-tablet-alt"></i><span>Digital Concierge</span></div>
                 <div class="item-list"><i class="fas fa-car"></i><span>Transporte Seguro</span></div>
                 <div class="item-list"><i class="fas fa-users"></i><span>Gestores de Filas</span></div>
@@ -207,15 +147,15 @@
                 <div class="item-list"><i class="fas fa-car-side"></i><span>Asistente de Retorno Seguro</span></div>
                 <div class="item-list"><i class="fas fa-user-shield"></i><span>Seguridad Personal</span></div>
 
-                <div class="div-title">DIVISIÓN 3: MANTENIMIENTO Y REFACCIONES TÉCNICAS</div>
-                <div class="item-list"><i class="fas fa-trowel"></i><span>Albañilería</span></div>
+                <div class="div-title">Mantenimiento y refacciones técnicas</div>
+                <div class="item-list"><i class="fas fa-trowel-bricks"></i><span>Albañilería</span></div>
                 <div class="item-list"><i class="fas fa-paint-roller"></i><span>Pintura</span></div>
                 <div class="item-list"><i class="fas fa-faucet"></i><span>Plomería</span></div>
                 <div class="item-list"><i class="fas fa-bolt"></i><span>Electricidad</span></div>
                 <div class="item-list"><i class="fas fa-hammer"></i><span>Carpintería y Melamina</span></div>
                 <div class="item-list"><i class="fas fa-key"></i><span>Cerrajería</span></div>
 
-                <div class="div-title">DIVISIÓN 4: ASISTENCIA Y GESTIÓN PROFESIONAL</div>
+                <div class="div-title">Apoyo ejecutivo</div>
                 <div class="item-list"><i class="fas fa-user-tie"></i><span>Asistente Personal</span></div>
                 <div class="item-list"><i class="fas fa-user-edit"></i><span>Secretaría Administrativa</span></div>
                 <div class="item-list"><i class="fas fa-file-invoice"></i><span>Trámites</span></div>
@@ -232,7 +172,7 @@
 </section>
 
 <div class="full-width-bn">
-    <img src="https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png" alt="Especialistas Soluciones 360">
+    <img src="https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png" alt="Especialistas">
 </div>
 
 <footer>
@@ -263,3 +203,4 @@
 
 </body>
 </html>
+ 
