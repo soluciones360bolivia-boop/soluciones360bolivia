@@ -9,105 +9,118 @@
     <style>
         :root { 
             --azul-tinta: #003366; 
-            --oro: #C5A059; 
-            --hueso-viejo: #F5F5DC; 
+            --oro-moneda: #FFD700; /* Dorado brillante solicitado */
+            --oro-mate: #C5A059;
+            --hueso-profesional: #F8F6F0; /* Color mucho más claro y elegante */
             --blanco-puro: #FFFFFF;
             --negro-footer: #02060c;
         }
         
         body { 
             font-family: 'Roboto', sans-serif; 
-            background: var(--hueso-viejo); 
+            background: var(--hueso-profesional); 
             color: var(--azul-tinta); 
             margin: 0; padding: 0; overflow-x: hidden; 
         }
         
-        /* CABECERA REFINADA */
+        /* CABECERA CON RECUADRO DORADO MONEDA */
         .header-top { 
             position: absolute; top: 0; left: 0; width: 100%; 
             display: flex; justify-content: space-between; align-items: flex-start; 
-            padding: 25px 5%; z-index: 10; box-sizing: border-box; 
+            padding: 30px 5%; z-index: 10; box-sizing: border-box; 
         }
-        .logo-text { font-size: 1.8rem; font-weight: 700; color: var(--azul-tinta); }
+        .logo-text { font-size: 2rem; font-weight: 700; color: var(--azul-tinta); }
         
         .badge-especialistas {
             text-align: center;
-            border: 2px solid var(--azul-tinta);
-            padding: 10px 20px;
-            background: rgba(197, 160, 89, 0.1);
+            background: var(--oro-moneda);
+            padding: 12px 25px;
+            border: 3px solid var(--azul-tinta);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            border-radius: 2px;
         }
-        .badge-especialistas .grande { font-size: 1.8rem; font-weight: 700; display: block; line-height: 1; }
-        .badge-especialistas .pequeno { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-top: 5px; display: block; }
+        .badge-especialistas .grande { font-size: 2.2rem; font-weight: 700; display: block; line-height: 0.9; color: var(--azul-tinta); }
+        .badge-especialistas .pequeno { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-top: 5px; display: block; color: var(--azul-tinta); }
 
-        /* HERO SIN RECUADRO EN TEXTO */
+        /* HERO SIN RECUADROS, TEXTO LIMPIO */
         .hero { 
-            height: 500px; 
-            background: linear-gradient(rgba(245,245,220,0.1), rgba(245,245,220,0.1)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); 
+            height: 550px; 
+            background: linear-gradient(rgba(248,246,240,0.1), rgba(248,246,240,0.1)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); 
             background-size: cover; background-position: top center; 
             display: flex; flex-direction: column; justify-content: flex-end; align-items: center; 
-            border-bottom: 5px solid var(--oro); text-align: center; padding: 0 20px 50px 20px; 
+            border-bottom: 6px solid var(--oro-mate); text-align: center; padding: 0 20px 60px 20px; 
         }
         .hero h1 { 
-            font-size: 2.1rem; text-transform: uppercase; color: var(--azul-tinta); 
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-            max-width: 900px; margin: 0; 
+            font-size: 2.2rem; text-transform: uppercase; color: var(--azul-tinta); 
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
+            max-width: 950px; margin: 0; font-weight: 700;
         }
         
         .content-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 5%; width: 100%; box-sizing: border-box; }
 
-        /* INTRODUCCIÓN - LETRA MÁS GRANDE */
-        .intro-sec { padding: 60px 0; }
-        .intro-text p { margin-bottom: 25px; line-height: 1.8; text-align: justify; font-size: 1.25rem; }
+        /* INTRODUCCIÓN - LETRA MÁS GRANDE Y CLARA */
+        .intro-sec { padding: 80px 0; }
+        .intro-text p { margin-bottom: 30px; line-height: 1.9; text-align: justify; font-size: 1.35rem; font-weight: 400; }
 
-        /* SERVICIOS SIN "DIVISIONES" */
+        /* SERVICIOS - NOMENCLATURA LIMPIA */
         .section-subtitle { 
-            color: var(--azul-tinta); font-size: 2.2rem; margin: 40px 0 20px; 
-            text-transform: uppercase; border-bottom: 3px solid var(--oro); 
+            color: var(--azul-tinta); font-size: 2.4rem; margin: 40px 0 30px; 
+            text-transform: uppercase; border-bottom: 4px solid var(--oro-moneda); 
             display: inline-block; font-weight: 700;
         }
-        .main-grid { display: grid; grid-template-columns: 1fr 280px; gap: 40px; padding-bottom: 60px; }
+        .main-grid { display: grid; grid-template-columns: 1fr 280px; gap: 50px; padding-bottom: 80px; }
         
         .div-title { 
-            color: var(--oro); font-size: 1.3rem; font-weight: 700; 
-            margin: 40px 0 15px; border-left: 6px solid var(--azul-tinta); 
-            padding-left: 15px; text-transform: uppercase;
+            color: var(--oro-mate); font-size: 1.5rem; font-weight: 700; 
+            margin: 50px 0 20px; border-left: 8px solid var(--azul-tinta); 
+            padding-left: 20px; text-transform: uppercase;
         }
         .item-list { 
-            padding: 14px 0; border-bottom: 1px solid rgba(0,51,102,0.1);
+            padding: 16px 0; border-bottom: 1px solid rgba(0,51,102,0.15);
             display: flex; align-items: center; 
         }
-        .item-list i { color: var(--oro); width: 40px; font-size: 1.4rem; text-align: center; margin-right: 15px; }
-        .item-list span { font-size: 1.15rem; }
+        .item-list i { color: var(--oro-mate); width: 45px; font-size: 1.6rem; text-align: center; margin-right: 20px; }
+        .item-list span { font-size: 1.25rem; }
         
         /* PUBLICIDAD */
-        .ads-vertical-container { display: flex; flex-direction: column; gap: 20px; padding-top: 100px; }
+        .ads-vertical-container { display: flex; flex-direction: column; gap: 25px; padding-top: 120px; }
         .ads-vertical { 
-            background: rgba(0,51,102,0.05); border: 2px dashed var(--oro); 
-            padding: 40px 20px; text-align: center; color: var(--oro); 
-            font-weight: 700; font-size: 0.85rem; text-transform: uppercase;
+            background: rgba(0,51,102,0.03); border: 2px dashed var(--oro-mate); 
+            padding: 50px 20px; text-align: center; color: var(--oro-mate); 
+            font-weight: 700; font-size: 0.9rem; text-transform: uppercase;
         }
 
-        .full-width-bn { width: 100vw; overflow: hidden; border-top: 3px solid var(--oro); border-bottom: 3px solid var(--oro); }
-        .full-width-bn img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
+        .full-width-bn { width: 100vw; overflow: hidden; border-top: 4px solid var(--oro-mate); border-bottom: 4px solid var(--oro-mate); }
+        .full-width-bn img { width: 100%; height: auto; display: block; filter: grayscale(100%); opacity: 0.9; }
 
-        /* FOOTER OSCURO */
-        footer { background: var(--negro-footer); padding: 70px 5% 30px; border-top: 5px solid var(--oro); color: #ccc; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; }
-        .footer-box h4 { color: var(--oro); text-transform: uppercase; margin-bottom: 25px; border-left: 4px solid var(--oro); padding-left: 15px; }
-        .copyright { text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+        /* FOOTER OSCURO PROFESIONAL */
+        footer { background: var(--negro-footer); padding: 80px 5% 40px; border-top: 6px solid var(--oro-moneda); color: #ccc; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; }
+        .footer-box h4 { color: var(--oro-moneda); text-transform: uppercase; margin-bottom: 30px; border-left: 5px solid var(--oro-moneda); padding-left: 18px; font-size: 1.1rem; }
+        .footer-box p { line-height: 1.8; font-size: 0.95rem; text-align: justify; }
+        .copyright { text-align: center; padding-top: 40px; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1); color: var(--oro-moneda); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
 
+        /* BOTÓN FLOTANTE MÁS GRANDE Y VISIBLE */
         .btn-float { 
-            position: fixed; bottom: 30px; right: 30px; background: var(--azul-tinta); 
-            color: var(--oro); padding: 18px 30px; border-radius: 50px; text-decoration: none; 
-            font-weight: 700; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 100; border: 2px solid var(--oro); 
+            position: fixed; bottom: 40px; right: 40px; 
+            background: var(--oro-moneda); 
+            color: var(--azul-tinta); 
+            width: 100px; height: 100px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; text-decoration: none; 
+            font-weight: 700; box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
+            z-index: 100; border: 4px solid var(--azul-tinta); 
+            text-align: center; font-size: 0.85rem; padding: 10px;
+            transition: 0.3s;
         }
+        .btn-float:hover { transform: scale(1.1); box-shadow: 0 20px 45px rgba(0,0,0,0.5); }
 
         @media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } .ads-vertical-container { display: none; } }
     </style>
 </head>
 <body>
 
-<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO AHORA</a>
+<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO</a>
 
 <div class="header-top">
     <div class="logo-text">Soluciones 360°</div>
@@ -125,8 +138,8 @@
     <div class="content-wrapper">
         <div class="intro-text">
             <p>Soluciones 360° es la primera plataforma boliviana dedicada a formalizar, organizar y profesionalizar la prestación de servicios personales y técnicos de toda índole a domicilio, oficina o donde el cliente lo requiera de manera inmediata y garantizada.</p>
-            <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza a través de un sistema de gestión eficiente que elimina riesgos de informalidad.</p>
-            <p>Nuestra prioridad es elevar los estándares de calidad en el mercado nacional, asegurando que cada intervención técnica o personal cuente con el respaldo necesario para la satisfacción total de nuestros usuarios.</p>
+            <p>Gestionamos sus requerimientos con personal capacitado y verificado, para brindarle tranquilidad, seguridad y confianza a través de un sistema de gestión eficiente que elimina riesgos de informalidad y garantiza el cumplimiento legal.</p>
+            <p>Nuestra prioridad es elevar los estándares de calidad en el mercado nacional, asegurando que cada intervención técnica o personal cuente con el respaldo necesario para la satisfacción total de nuestros usuarios bajo un marco de excelencia.</p>
         </div>
 
         <h2 class="section-subtitle">Nuestros servicios</h2>
@@ -172,7 +185,7 @@
 </section>
 
 <div class="full-width-bn">
-    <img src="https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png" alt="Especialistas">
+    <img src="https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png" alt="Especialistas de Soluciones 360">
 </div>
 
 <footer>
@@ -180,13 +193,13 @@
         <div class="footer-grid">
             <div class="footer-box">
                 <h4>Información Corporativa</h4>
-                <p><strong>MISIÓN:</strong> Brindar soluciones integrales mediante personal verificado, garantizando satisfacción total y profesionalismo en cada requerimiento.</p>
+                <p><strong>MISIÓN:</strong> Brindar soluciones integrales mediante personal verificado, garantizando satisfacción total y profesionalismo en cada requerimiento atendido.</p>
                 <p><strong>VISIÓN:</strong> Ser el referente nacional líder en servicios integrales, elevando el estándar de confianza y calidad en toda Bolivia.</p>
             </div>
             <div class="footer-box">
                 <h4>Garantía y Respaldo Legal</h4>
-                <p><strong>GARANTÍA:</strong> Supervisión técnica activa en cada servicio para asegurar resultados óptimos bajo los más altos estándares corporativos.</p>
-                <p><strong>RESPALDO:</strong> Declaración Jurada (Respaldo Legal) y Contrato Civil de Prestación de Servicios Independientes con blindaje total.</p>
+                <p><strong>GARANTÍA:</strong> Supervisión técnica activa en cada servicio para asegurar resultados óptimos bajo los más altos estándares corporativos de calidad.</p>
+                <p><strong>RESPALDO:</strong> Declaración Jurada (Respaldo Legal) y Contrato Civil de Prestación de Servicios Independientes con blindaje total a favor de Soluciones 360°.</p>
             </div>
             <div class="footer-box">
                 <h4>Contacto Directo</h4>
