@@ -128,7 +128,6 @@
                 </div>
                 <div class="form-group"><label>Dirección Detallada</label><textarea placeholder="Piso, Puerta, Edificio, Fachada, Referencias" required></textarea></div>
                 <div class="form-group"><label>WhatsApp de Gestión</label><input type="tel" value="+591" required></div>
-                
                 <div class="form-group"><label>1. Identificación del Ejemplar (Nombre/Raza)</label><input type="text" required></div>
                 <div class="form-group"><label>2. Carácter y Conducta</label><select multiple required><option>Sociable</option><option>Nervioso</option><option>Agresivo</option><option>Miedo a ruidos</option></select></div>
                 <div class="form-group"><label>3. Requerimientos de Seguridad</label><select multiple required><option>Requiere Bozal</option><option>Usa Pechera</option><option>Usa Collar Simple</option></select></div>
@@ -140,8 +139,25 @@
                 <div class="form-group"><label>11. Multimedia (Opcional)</label><input type="file"></div>
                 <div class="form-group"><label>12. Inicio del Servicio</label><input type="datetime-local" required></div>
                 <div class="form-group"><label>13. Duración (Horas)</label><input type="number" id="hrsMascota" value="1" min="1" required></div>
-                
                 <div class="cost-preview">Costo Estimado: <span id="totalMascota">40</span> Bs.</div>
+                <button type="submit" class="btn-submit">Generar ID Único</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalProtocolo" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>BRIEFING: PROTOCOLO SOCIAL</h3><span class="close" onclick="cerrarModal('modalProtocolo')">×</span></div>
+            <form id="formProtocolo">
+                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
+                <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
+                <div class="form-group">
+                    <label>Ubicación GPS</label>
+                    <button type="button" class="btn-gps" onclick="alert('Capturando GPS...')">Obtener mi ubicación actual</button>
+                    <input type="url" placeholder="Pegar Link de Google Maps (Manual)" required>
+                </div>
+                <div class="form-group"><label>Dirección Detallada</label><textarea placeholder="Piso, Puerta, Edificio, Color de fachada, Referencias" required></textarea></div>
+                <div class="form-group"><label>WhatsApp de Gestión</label><input type="tel" value="+591" required></div>
                 <button type="submit" class="btn-submit">Generar ID Único</button>
             </form>
         </div>
@@ -168,7 +184,7 @@
                 <div class="srv-item" onclick="abrirModal('modalLimpieza')"><i class="fas fa-broom"></i>Limpieza</div>
                 <div class="srv-item" onclick="abrirModal('modalAncianos')"><i class="fas fa-user-nurse"></i>Cuidado de Ancianos</div>
                 <div class="srv-item" onclick="abrirModal('modalMascotas')"><i class="fas fa-paw"></i>Paseo y Cuidado de Mascotas</div>
-                <div class="srv-item"><i class="fas fa-glass-cheers"></i>Protocolo Social</div>
+                <div class="srv-item" onclick="abrirModal('modalProtocolo')"><i class="fas fa-glass-cheers"></i>Protocolo Social</div>
                 <div class="div-tit">Logística y Gestión de Tiempo</div>
                 <div class="srv-item"><i class="fas fa-tablet-alt"></i>Digital Concierge</div>
                 <div class="srv-item"><i class="fas fa-car"></i>Transporte Seguro</div>
@@ -252,15 +268,24 @@
         function cerrarModal(id) { document.getElementById(id).style.display = 'none'; }
         
         // Calculador Mascota
-        document.getElementById('hrsMascota').oninput = function() {
-            document.getElementById('totalMascota').innerText = this.value * 40;
+        if(document.getElementById('hrsMascota')){
+            document.getElementById('hrsMascota').oninput = function() {
+                document.getElementById('totalMascota').innerText = this.value * 40;
+            }
         }
 
+        // Form Mascotas
         document.getElementById('formMascotas').onsubmit = function(e) {
             e.preventDefault();
             const cel = document.getElementById('celMascota').value;
             if(!/^[67][0-9]{7}$/.test(cel)) { alert("Celular inválido."); return; }
             alert("ID: S360-M" + Math.floor(Math.random()*9999) + "\nCosto: " + (document.getElementById('hrsMascota').value * 40) + " Bs.");
+        };
+
+        // Form Protocolo
+        document.getElementById('formProtocolo').onsubmit = function(e) {
+            e.preventDefault();
+            alert("ID: S360-P" + Math.floor(Math.random()*9999));
         };
     </script>
 </body>
