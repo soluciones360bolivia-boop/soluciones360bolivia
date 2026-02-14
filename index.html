@@ -83,7 +83,7 @@
             <div>
                 <div class="div-tit">Asistencia y Cuidado Personal</div>
                 <div class="srv-item" onclick="abrirServicio('limpieza')" style="cursor:pointer; background: rgba(197,160,89,0.1);">
-    <i class="fas fa-broom"></i>Limpieza (Clic para Briefing)
+    <i class="fas fa-broom"></i>Limpieza.
 </div>
 
                 <div class="srv-item"><i class="fas fa-user-nurse"></i>Cuidado de Ancianos</div>
@@ -172,31 +172,69 @@
 </div>
 
 <script>
-function abrirServicio(tipo) {
-    document.getElementById('modalCerebro').style.display = "block";
-    if(tipo === 'limpieza') {
-        document.getElementById('contenedorBriefing').innerHTML = `
-            <h2 style="color:var(--azul)">BRIEFING DE LIMPIEZA</h2>
-            <p><strong>DATOS GENERALES:</strong></p>
-            <input type="text" id="nombre" placeholder="Nombre / Razón Social" required>
-            <input type="text" id="identidad" placeholder="CI / NIT" required>
-            <button type="button" onclick="alert('Obteniendo GPS...')">📍 OBTENER UBICACIÓN GPS</button>
-            <textarea id="direccion" placeholder="Dirección Detallada (Piso, Edificio, Referencias)" required></textarea>
-            <input type="tel" id="whatsapp" placeholder="WhatsApp de Gestión" required>
-            <hr>
-            <p><strong>DATOS ESPECÍFICOS:</strong></p>
-            <input type="number" id="metraje" placeholder="Metraje (m2)" required>
-            <select id="tipo_l"><option>General</option><option>Profunda</option><option>Post-Obra</option></select>
-            <select id="insumos"><option>Cliente provee</option><option>Empresa provee</option></select>
-            <textarea id="desc" placeholder="Descripción Detallada (OBLIGATORIO)" required></textarea>
-            <label>Inicio del Servicio:</label>
-            <input type="datetime-local" id="fecha_inicio" required>
-            <button class="btn-enviar" onclick="alert('Generando ID Único y enviando...')">GENERAR SOLICITUD</button>
-        `;
+    <div id="modalCerebro" class="modal-servicio">
+        <div class="modal-content">
+            <span onclick="cerrarModal()" style="float:right; cursor:pointer; font-size:2rem; font-weight:bold;">&times;</span>
+            <div id="contenedorBriefing"></div>
+        </div>
+    </div>
+
+    <script>
+    function abrirServicio(tipo) {
+        document.getElementById('modalCerebro').style.display = "block";
+        let contenido = "";
+        
+        if(tipo === 'limpieza') {
+            contenido = `
+                <h2 style="color:var(--azul); border-bottom: 2px solid var(--oro-m); margin-bottom:15px;">BRIEFING DE LIMPIEZA</h2>
+                <p style="font-weight:700; color:var(--oro-m); margin-bottom:5px;">DATOS GENERALES:</p>
+                <input type="text" id="nombre" placeholder="Nombre / Razón Social" required>
+                <input type="text" id="identidad" placeholder="CI / NIT" required>
+                <button type="button" style="background:var(--oro); border:1px solid var(--azul); padding:12px; cursor:pointer; width:100%; font-weight:700; margin-bottom:10px;" onclick="alert('Obteniendo GPS...')">📍 OBTENER UBICACIÓN GPS ACTUAL</button>
+                <textarea id="direccion" placeholder="Dirección Detallada (Piso, Edificio, Referencias)" required></textarea>
+                <input type="tel" id="whatsapp" placeholder="WhatsApp de Gestión" required>
+                
+                <hr style="margin:20px 0; border:1px solid var(--oro-m);">
+                
+                <p style="font-weight:700; color:var(--oro-m); margin-bottom:5px;">DATOS ESPECÍFICOS (Base para cotización):</p>
+                
+                <label style="display:block; margin-top:10px; font-weight:700;">Metraje (m²) - Obligatorio:</label>
+                <input type="number" id="metraje" placeholder="Ej: 50" required>
+                
+                <label style="display:block; margin-top:10px; font-weight:700;">Tipo de Limpieza Sugerido:</label>
+                <select id="tipo_l">
+                    <option value="general">General</option>
+                    <option value="profunda">Profunda</option>
+                    <option value="post-obra">Post-Obra</option>
+                </select>
+                
+                <label style="display:block; margin-top:10px; font-weight:700;">Materiales de Limpieza:</label>
+                <select id="insumos">
+                    <option value="cliente">Cliente provee materiales</option>
+                    <option value="empresa">Empresa provee materiales</option>
+                </select>
+                
+                <label style="display:block; margin-top:10px; font-weight:700;">Descripción del Servicio (OBLIGATORIO):</label>
+                <textarea id="desc" placeholder="Detalle áreas críticas (ej: cocina, vidrios, alfombras)" required></textarea>
+                
+                <label style="display:block; margin-top:10px; font-weight:700;">Multimedia (Obligatorio):</label>
+                <p style="font-size:0.8rem; margin:0; color:gray;">Cargue hasta 3 fotos o 1 video (máx. 20 seg).</p>
+                <input type="file" id="archivo_limpieza" accept="image/*,video/*" multiple required style="border:none; padding:10px 0;">
+                
+                <label style="display:block; margin-top:10px; font-weight:700;">Fecha y Hora de Inicio:</label>
+                <input type="datetime-local" id="fecha_inicio" required>
+                
+                <button class="btn-enviar" style="margin-top:20px; background:var(--azul); color:white; padding:18px; width:100%; border:none; font-weight:bold; cursor:pointer;" onclick="alert('Validando datos...')">GENERAR SOLICITUD Y ID ÚNICO</button>
+            `;
+        }
+        document.getElementById('contenedorBriefing').innerHTML = contenido;
     }
-}
-function cerrarModal() { document.getElementById('modalCerebro').style.display = "none"; }
-</script>
+
+    function cerrarModal() {
+        document.getElementById('modalCerebro').style.display = "none";
+    }
+    </script>
 </body>
 </html>
+
  
