@@ -37,184 +37,37 @@
         .item-list { padding: 16px 0; border-bottom: 1px solid rgba(0,51,102,0.15); display: flex; align-items: center; }
         .item-list i { color: var(--oro-mate); width: 45px; font-size: 1.6rem; text-align: center; margin-right: 20px; }
         .item-list span { font-size: 1.25rem; }
-        .ads-vertical { background: rgba(0,51,102,0.03); border: 2px dashed var(--oro-mate); padding: 50px 20px; text-align: center; color: var(--oro-mate); font-weight: 700; text-transform: uppercase; margin-top: 120px; }
 
         /* IMAGEN B/N */
         .full-width-bn { width: 100vw; overflow: hidden; border-top: 4px solid var(--oro-mate); border-bottom: 4px solid var(--oro-mate); }
         .full-width-bn img { width: 100%; height: auto; display: block; filter: grayscale(100%); opacity: 0.9; }
 
-        /* ÚNETE A LA RED */
-        .join-section { background: var(--hueso-profesional); padding: 60px 0; text-align: center; }
-        .btn-join { background: var(--oro-moneda); color: var(--azul-tinta); padding: 20px 40px; text-decoration: none; font-weight: 700; font-size: 1.5rem; border: 3px solid var(--azul-tinta); box-shadow: 0 10px 20px rgba(0,0,0,0.2); display: inline-block; }
-
-        /* FOOTER */
+        /* BOTÓN FLOTANTE */
+        .btn-float { position: fixed; bottom: 40px; right: 40px; background: var(--oro-moneda); color: var(--azul-tinta); width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-weight: 700; box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 100; border: 4px solid var(--azul-tinta); text-align: center; font-size: 0.95rem; padding: 15px; transition: 0.3s; }
+        
+        /* FOOTER PROFESIONAL */
         footer { background: var(--negro-footer); padding: 80px 0 40px; color: #ccc; border-top: 4px solid var(--oro-mate); }
         .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 40px; }
         .footer-box h4 { color: var(--oro-moneda); text-transform: uppercase; margin-bottom: 20px; font-size: 1.1rem; border-bottom: 1px solid var(--oro-mate); padding-bottom: 5px; display: inline-block; }
-        .footer-box p { line-height: 1.7; font-size: 0.95rem; text-align: justify; margin-bottom: 15px; }
+        .footer-box p { line-height: 1.7; font-size: 0.95rem; text-align: justify; }
 
-        /* GARANTÍA REDACCIÓN COMPLETA */
-        .garantia-full { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); margin: 40px 0; }
-        .garantia-full h3 { color: var(--oro-moneda); text-align: center; font-size: 1.6rem; margin-bottom: 25px; text-transform: uppercase; }
-        .garantia-full h4 { color: #fff; text-align: center; font-size: 1.2rem; margin-bottom: 30px; font-weight: 400; }
-        .garantia-text-block { max-width: 900px; margin: 0 auto; line-height: 1.8; font-size: 1rem; color: #ccc; text-align: justify; }
+        /* GARANTÍA REDACCIÓN TOTAL */
+        .garantia-seccion { padding: 50px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); margin: 40px 0; }
+        .garantia-seccion h3 { color: var(--oro-moneda); text-align: center; font-size: 1.6rem; margin-bottom: 20px; text-transform: uppercase; }
+        .garantia-seccion h4 { color: #fff; text-align: center; font-size: 1.2rem; margin-bottom: 30px; font-weight: 400; }
+        .garantia-texto { max-width: 950px; margin: 0 auto; line-height: 1.8; font-size: 1rem; color: #ccc; }
+        .garantia-texto p { margin-bottom: 25px; text-align: justify; }
         
-        .garantia-puntos { list-style: none; padding: 0; margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .garantia-puntos li { display: flex; align-items: flex-start; font-size: 0.9rem; }
-        .garantia-puntos i { color: var(--oro-moneda); font-size: 1.2rem; margin-right: 15px; margin-top: 3px; }
-        .garantia-puntos strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1rem; }
+        .garantia-puntos-lista { list-style: none; padding: 0; }
+        .garantia-puntos-lista li { margin-bottom: 20px; display: flex; align-items: flex-start; }
+        .garantia-puntos-lista i { color: var(--oro-moneda); font-size: 1.1rem; margin-right: 15px; margin-top: 5px; } /* Iconos tamaño RRSS */
+        .garantia-puntos-lista strong { color: #fff; }
 
-        /* CONTACTO Y REDES */
-        .footer-contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; padding: 40px 0; }
-        .contact-col div { margin-bottom: 12px; font-size: 0.95rem; }
+        /* CONTACTO */
+        .footer-contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 0; }
         .contact-col i { color: var(--oro-moneda); margin-right: 12px; font-size: 1.1rem; }
-        .contact-col a { color: #ccc; text-decoration: none; transition: 0.3s; }
-        .contact-col a:hover { color: var(--oro-moneda); }
+        .contact-col a { color: #ccc; text-decoration: none; }
 
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; }
-        .copyright { font-size: 0.8rem; font-weight: 700; color: var(--oro-mate); letter-spacing: 1px; }
-
-        /* BOTÓN FLOTANTE */
-        .btn-float { position: fixed; bottom: 40px; right: 40px; background: var(--oro-moneda); color: var(--azul-tinta); width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-weight: 700; box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 100; border: 4px solid var(--azul-tinta); text-align: center; font-size: 0.95rem; padding: 15px; transition: 0.3s; }
-        .btn-float:hover { transform: scale(1.1); }
-
-        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; gap: 20px; } }
-    </style>
-</head>
-<body>
-
-<a href="https://wa.me/59162354424" class="btn-float">SOLICITAR SERVICIO <br> AHORA</a>
-
-<div class="header-top">
-    <div class="logo-text">Soluciones 360°</div>
-    <div class="badge-especialistas">
-        <span class="grande">+ 2000</span>
-        <span class="pequeno">especialistas registrados</span>
-    </div>
-</div>
-
-<section class="hero">
-    <h1>Gestionamos sus requerimientos con personal capacitado y verificado</h1>
-</section>
-
-<section class="intro-sec">
-    <div class="content-wrapper">
-        <h2 class="section-subtitle">Nuestros servicios</h2>
-        <div class="main-grid">
-            <div class="servicios-content">
-                <div class="div-title">Asistencia y cuidado personal</div>
-                <div class="item-list"><i class="fas fa-broom"></i><span>Limpieza</span></div>
-                <div class="item-list"><i class="fas fa-user-nurse"></i><span>Cuidado de Ancianos</span></div>
-                <div class="item-list"><i class="fas fa-paw"></i><span>Paseo y Cuidado de Mascotas</span></div>
-                <div class="item-list"><i class="fas fa-glass-cheers"></i><span>Protocolo Social</span></div>
-                
-                <div class="div-title">Logística y gestión de tiempo</div>
-                <div class="item-list"><i class="fas fa-tablet-alt"></i><span>Digital Concierge</span></div>
-                <div class="item-list"><i class="fas fa-car"></i><span>Transporte Seguro</span></div>
-                <div class="item-list"><i class="fas fa-users"></i><span>Gestores de Filas</span></div>
-                <div class="item-list"><i class="fas fa-shopping-basket"></i><span>Auxiliar de Compras</span></div>
-                <div class="item-list"><i class="fas fa-car-side"></i><span>Asistente de Retorno Seguro</span></div>
-                <div class="item-list"><i class="fas fa-user-shield"></i><span>Seguridad Personal</span></div>
-
-                <div class="div-title">Mantenimiento y refacciones técnicas</div>
-                <div class="item-list"><i class="fas fa-trowel-bricks"></i><span>Albañilería</span></div>
-                <div class="item-list"><i class="fas fa-paint-roller"></i><span>Pintura</span></div>
-                <div class="item-list"><i class="fas fa-faucet"></i><span>Plomería</span></div>
-                <div class="item-list"><i class="fas fa-bolt"></i><span>Electricidad</span></div>
-                <div class="item-list"><i class="fas fa-hammer"></i><span>Carpintería y Melamina</span></div>
-                <div class="item-list"><i class="fas fa-key"></i><span>Cerrajería</span></div>
-
-                <div class="div-title">Apoyo ejecutivo</div>
-                <div class="item-list"><i class="fas fa-user-tie"></i><span>Asistente Personal</span></div>
-                <div class="item-list"><i class="fas fa-user-edit"></i><span>Secretaría Administrativa</span></div>
-                <div class="item-list"><i class="fas fa-file-invoice"></i><span>Trámites</span></div>
-                <div class="item-list"><i class="fas fa-truck"></i><span>Mensajería</span></div>
-                <div class="item-list"><i class="fas fa-briefcase"></i><span>Apoyo Comercial Eventual</span></div>
-            </div>
-            <aside class="ads-vertical-container">
-                <div class="ads-vertical">Espacio publicitario disponible</div>
-                <div class="ads-vertical">Espacio publicitario disponible</div>
-            </aside>
-        </div>
-    </div>
-</section>
-
-<div class="full-width-bn">
-    <img src="https://i.ibb.co/jvMcvCgv/file-000000000a4c720ebfb48bcb331f258a.png" alt="Especialistas Bolivia">
-</div>
-
-<section class="join-section">
-    <a href="https://wa.me/59162354424" class="btn-join">ÚNETE A NUESTRA RED NACIONAL DE ESPECIALISTAS</a>
-</section>
-
-<footer>
-    <div class="content-wrapper">
-        <div class="footer-grid">
-            <div class="footer-box">
-                <h4>MISIÓN</h4>
-                <p>Brindar soluciones integrales y confiables a hogares, negocios y personas, mediante una red de prestadores de servicio verificados, capacitados y respaldados. Garantizamos calidad, seguridad jurídica, puntualidad y excelencia en cada servicio, creando un ecosistema donde tanto clientes como trabajadores encuentran apoyo, orden y oportunidades reales de crecimiento.</p>
-            </div>
-            <div class="footer-box">
-                <h4>VISIÓN</h4>
-                <p>Ser la empresa de servicios más confiable, innovadora y completa de Bolivia, liderando la formalización de la mano de obra, elevando los estándares de calidad del sector y convirtiéndonos en la plataforma de referencia para clientes que buscan seguridad y eficiencia, y para trabajadores que buscan oportunidades reales, dignas y respaldadas.</p>
-            </div>
-        </div>
-
-        <div class="footer-grid">
-            <div class="footer-box">
-                <h4>COMPROMISO ÉTICO</h4>
-                <p>Nuestra red se fundamenta en un estricto compromiso ético y de responsabilidad profesional. Garantizamos integridad técnica, puntualidad y respeto absoluto a la privacidad del cliente bajo la normativa civil boliviana vigente.</p>
-            </div>
-            <div class="footer-box">
-                <h4>INFORMACIÓN LEGAL</h4>
-                <p>Soluciones 360° es una plataforma de gestión de servicios regulados bajo normativa civil boliviana. Operamos con el respaldo jurídico de la Declaración Jurada y el Contrato Civil de Prestación de Servicios Independientes.</p>
-            </div>
-        </div>
-
-        <div class="garantia-full">
-            <h3>RESPALDO Y GARANTÍA 360°</h3>
-            <h4>Seguridad en la que puedes confiar:</h4>
-            <div class="garantia-text-block">
-                <p>En Soluciones 360°, no solo conectamos personas, protegemos tu inversión y tu tranquilidad. Cada uno de nuestros servicios cuenta con un triple respaldo:</p>
-                <ul class="garantia-puntos">
-                    <li>
-                        <i class="fas fa-user-check"></i>
-                        <span><strong>Personal Verificado:</strong> Todo prestador de servicio ha pasado por un riguroso proceso de selección que incluye verificación de antecedentes, identidad y referencias reales.</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-satellite-dish"></i>
-                        <span><strong>Seguimiento Técnico:</strong> Monitoreamos la ejecución de cada trabajo desde el inicio hasta la entrega final para asegurar el cumplimiento de estándares de calidad.</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-shield-alt"></i>
-                        <span><strong>Garantía de Satisfacción:</strong> Si el servicio técnico no cumple con lo acordado, contamos con un protocolo de respuesta inmediata para correcciones y ajustes sin costo adicional.</span>
-                    </li>
-                </ul>
-                <p style="text-align: center; margin-top: 30px; font-weight: 700; color: #fff; font-style: italic;">“Trabajamos con personas verificadas para que tú solo te preocupes por disfrutar de tu tiempo libre.”</p>
-            </div>
-        </div>
-
-        <div class="footer-contact-info">
-            <div class="contact-col">
-                <div><i class="fas fa-envelope"></i> <a href="mailto:soluciones360bolivia@gmail.com">soluciones360bolivia@gmail.com</a></div>
-                <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/59162354424">+591 62354424</a></div>
-            </div>
-            <div class="contact-col">
-                <div><i class="fab fa-facebook"></i> <a href="#">Soluciones 360° Bolivia</a></div>
-                <div><i class="fab fa-instagram"></i> <a href="#">@soluciones360_bo</a></div>
-            </div>
-            <div class="contact-col">
-                <div><i class="fas fa-clock"></i> Lu a Sa: 09:00 - 19:00</div>
-                <div><i class="fas fa-bolt"></i> Emergencias 24 Horas | Cobertura Nacional</div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="copyright">© 2026 SOLUCIONES 360° BOLIVIA. TODOS LOS DERECHOS REGISTRADOS.</div>
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--oro-mate); }
+    </style
  
