@@ -39,9 +39,8 @@
 
         .btn-float { position: fixed; bottom: 40px; right: 40px; background: var(--oro); color: var(--azul); width: 160px; height: 160px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; border: 6px solid var(--azul); z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.5); text-decoration: none; font-size: 1.1rem; }
 
-        /* MODALES */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y: auto; }
-        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; border: 4px solid var(--oro-m); width: 95%; max-width: 750px; color: var(--azul); }
+        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; border: 4px solid var(--oro-m); width: 90%; max-width: 700px; color: var(--azul); }
         .modal-header { border-bottom: 2px solid var(--oro-m); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
         .close { font-size: 2.5rem; cursor: pointer; font-weight: bold; }
         .form-group { margin-bottom: 15px; }
@@ -63,39 +62,88 @@
 <body>
     <a href="https://wa.me/59162354424" class="btn-float">SOLICITAR<br>SERVICIO<br>AHORA</a>
     
-    <div id="modalLimpieza" class="modal">
+    <div id="modalLimpieza" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: LIMPIEZA</h3><span class="close" onclick="cerrarModal('modalLimpieza')">&times;</span></div><form><div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div><div class="form-group"><label>CI / NIT</label><input type="text" required></div><button type="button" class="btn-gps">Obtener Ubicación Actual</button><div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div><div class="form-group"><label>Metraje (m2)</label><input type="number" required></div><div class="form-group"><label>Multimedia</label><input type="file" required></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
+
+    <div id="modalAncianos" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: ANCIANOS</h3><span class="close" onclick="cerrarModal('modalAncianos')">&times;</span></div><form><div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div><div class="form-group"><label>Cuadro de Salud / Alergias</label><textarea required></textarea></div><div class="form-group"><label>Contacto Emergencia</label><input type="tel" required></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
+
+    <div id="modalMascotas" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: MASCOTAS</h3><span class="close" onclick="cerrarModal('modalMascotas')">&times;</span></div><form oninput="total.value=parseInt(horas.value)*40"><div class="form-group"><label>Nombre Mascota</label><input type="text" required></div><div class="form-group"><label>Horas</label><input type="number" id="horas" value="1"></div><div class="cost-preview">Costo: <output name="total">40</output> Bs.</div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
+
+    <div id="modalProtocolo" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: PROTOCOLO SOCIAL</h3><span class="close" onclick="cerrarModal('modalProtocolo')">&times;</span></div><form><div class="form-group"><label>Tipo de Evento</label><select><option>Corporativo</option><option>Gala</option><option>Acompañamiento Privado</option></select></div><div class="form-group"><label>Vestimenta</label><select><option>Formal</option><option>Gala</option></select></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
+
+    <div id="modalConcierge" class="modal">
         <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: LIMPIEZA</h3><span class="close" onclick="cerrarModal('modalLimpieza')">×</span></div>
-            <form id="formLimpieza">
+            <div class="modal-header"><h3>BRIEFING: DIGITAL CONCIERGE</h3><span class="close" onclick="cerrarModal('modalConcierge')">&times;</span></div>
+            <form id="formConcierge" oninput="resC.innerText = parseInt(hC.value)*45">
                 <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
                 <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
-                <div class="form-group"><label>Ubicación GPS</label><button type="button" class="btn-gps" onclick="alert('Obteniendo ubicación...')">Obtener mi ubicación actual</button></div>
-                <div class="form-group"><label>Dirección Detallada</label><textarea placeholder="Piso, Puerta, Edificio, Fachada, Referencias" required></textarea></div>
+                <div class="form-group"><label>Ubicación GPS</label>
+                    <button type="button" class="btn-gps" onclick="alert('Obteniendo...')">Obtener mi ubicación actual</button>
+                    <input type="url" placeholder="Link de Google Maps (Manual)" required>
+                </div>
+                <div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div>
                 <div class="form-group"><label>WhatsApp de Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><label>Metraje (m2) *</label><input type="number" required></div>
-                <div class="form-group"><label>Tipo de Limpieza</label><select required><option>General</option><option>Profunda</option><option>Post-Obra</option></select></div>
-                <div class="form-group"><label>Insumos</label><select required><option>Cliente provee</option><option>Empresa provee</option></select></div>
-                <div class="form-group"><label>Descripción del Servicio *</label><textarea rows="3" required></textarea></div>
-                <div class="form-group"><label>Multimedia *</label><input type="file" required></div>
-                <div class="form-group"><label>Inicio del Servicio *</label><input type="datetime-local" required></div>
+                
+                <div class="form-group"><label>1. Dispositivo / Sistema</label>
+                    <div style="font-size:0.8rem;">
+                        <input type="checkbox"> Smartphone | <input type="checkbox"> Tablet | <input type="checkbox"> Computadora | <input type="checkbox"> Smart TV / Otros <input type="text" placeholder="Especifique">
+                    </div>
+                </div>
+                <div class="form-group"><label>2. Objetivo del Aprendizaje</label><textarea placeholder="Ej: Banca Móvil, WhatsApp..." required></textarea></div>
+                <div class="form-group"><label>3. Nivel del Usuario</label><select required><option>Básico</option><option>Intermedio</option><option>Avanzado</option></select></div>
+                <div class="form-group"><input type="checkbox" required> El cliente declara tener sus contraseñas a mano.</div>
+                <div class="form-group"><label>7. Inicio del Servicio</label><input type="datetime-local" required></div>
+                <div class="form-group"><label>8. Tiempo Solicitado (Horas)</label><input type="number" id="hC" value="1" min="1"></div>
+                
+                <div class="blindaje-box">
+                    <strong>Privacidad:</strong> S360 prohíbe al personal almacenar o fotografiar contraseñas.<br>
+                    <strong>Hardware:</strong> El servicio es de enseñanza; no incluye reparaciones físicas ni cambio de piezas.
+                </div>
+                <div class="cost-preview">Costo: <span id="resC">45</span> Bs.</div>
                 <button type="submit" class="btn-submit">Generar ID Único</button>
             </form>
         </div>
     </div>
 
-    <div id="modalAncianos" class="modal">
-        <div class="modal-content">
-            <div class="modal-header"><h3>BRIEFING: CUIDADO DE ANCIANOS</h3><span class="close" onclick="cerrarModal('modalAncianos')">×</span></div>
-            <form id="formAncianos">
-                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
-                <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
-                <div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div>
-                <div class="form-group"><label>WhatsApp de Gestión</label><input type="tel" value="+591" required></div>
-                <div class="form-group"><label>1. Identificación del Asistido</label><input type="text" required></div>
-                <div class="form-group"><label>2. Nivel de Movilidad</label><select required><option>Independiente</option><option>Movilidad Reducida</option><option>Encamado</option></select></div>
-                <div class="form-group"><label>3. Cuadro de Salud / Alergias *</label><textarea required></textarea></div>
-                <div class="form-group"><label>5. Protocolo de Familia</label><textarea></textarea></div>
-                <div class="form-group"><label>6. Contacto de Emergencia *</label><input type="tel" placeholder="8 dígitos" required></div>
-                <div class="form-group"><label>8. Ubicación (Link Maps)</label><input type="url" required></div>
-                <div class="form-group"><label>9. Inicio del Servicio</label>
- 
+    <section class="hero">
+        <div class="hero-top-elements"><div class="logo-hero">Soluciones 360°</div><div class="badge-hero">+ 2000 ESPECIALISTAS</div></div>
+        <h1>GESTIONAMOS SUS REQUERIMIENTOS CON PERSONAL CAPACITADO Y VERIFICADO</h1>
+    </section>
+
+    <div class="wrapper">
+        <section class="intro-text">
+            <p>Bienvenido a <strong>Soluciones 360°</strong>, la red de asistencia técnica y personal más confiable de Bolivia. Entendemos que su tiempo y su seguridad son lo más valioso, por ello hemos consolidado una plataforma integral que responde a todas sus necesidades cotidianas, desde el mantenimiento especializado del hogar hasta la gestión logística de su agenda personal y profesional.</p>
+            <p>Nuestra misión es profesionalizar el sector de servicios en el país, conectando a clientes exigentes con una red selecta de más de 2000 especialistas rigurosamente verificados. No somos solo un directorio; somos un equipo de gestión que supervisa y garantiza que cada tarea sea ejecutada bajo los más altos estándares de calidad y compromiso técnico.</p>
+            <p>Con cobertura en las principales ciudades de Bolivia, Soluciones 360° le ofrece la tranquilidad de saber que sus requerimientos están en manos expertas. Ya sea una reparación de emergencia o la planificación de su seguridad personal, estamos aquí para brindarle un respaldo total las 24 horas del día.</p>
+        </section>
+
+        <div class="servicios-grid">
+            <div>
+                <div class="div-tit">Asistencia y Cuidado Personal</div>
+                <div class="srv-item" onclick="abrirModal('modalLimpieza')"><i class="fas fa-broom"></i>Limpieza</div>
+                <div class="srv-item" onclick="abrirModal('modalAncianos')"><i class="fas fa-user-nurse"></i>Cuidado de Ancianos</div>
+                <div class="srv-item" onclick="abrirModal('modalMascotas')"><i class="fas fa-paw"></i>Mascotas</div>
+                <div class="srv-item" onclick="abrirModal('modalProtocolo')"><i class="fas fa-glass-cheers"></i>Protocolo Social</div>
+                <div class="div-tit">Logística y Gestión de Tiempo</div>
+                <div class="srv-item" onclick="abrirModal('modalConcierge')"><i class="fas fa-tablet-alt"></i>Digital Concierge</div>
+            </div>
+            <aside style="background:rgba(0,0,0,0.05); height:400px; border:2px dashed var(--oro-m);"></aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="wrapper">
+            <div class="f-grid">
+                <div class="f-box"><h4>MISIÓN</h4><p>Brindar soluciones integrales y confiables a hogares, negocios y personas...</p></div>
+                <div class="f-box"><h4>VISIÓN</h4><p>Ser la empresa de servicios más confiable, innovadora y completa de Bolivia...</p></div>
+            </div>
+            <div class="contact-bar"><div><i class="fab fa-whatsapp"></i>+591 62354424</div><div><i class="fas fa-globe"></i>COBERTURA NACIONAL BOLIVIA</div></div>
+        </div>
+    </footer>
+
+    <script>
+        function abrirModal(id) { document.getElementById(id).style.display = 'block'; }
+        function cerrarModal(id) { document.getElementById(id).style.display = 'none'; }
+        window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display = 'none'; }
+    </script>
+</body>
+</html>
