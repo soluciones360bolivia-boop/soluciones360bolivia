@@ -14,16 +14,7 @@
         .hero { 
             height: 600px; 
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://i.ibb.co/ccsQPTYz/vecteezy-a-woman-in-a-white-shirt-holding-a-tablet-66186677.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            display: flex; 
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center; 
-            border-bottom: 6px solid var(--oro-m);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
+            background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; border-bottom: 6px solid var(--oro-m); color: white; padding: 40px 0; text-align: center;
         }
         .hero-top-elements { width: 90%; display: flex; justify-content: space-between; align-items: center; }
         .logo-hero { font-size: 2.5rem; font-weight: 700; color: var(--oro); text-shadow: 2px 2px 4px #000; }
@@ -31,23 +22,26 @@
         .hero h1 { font-size: 2.5rem; text-transform: uppercase; text-shadow: 2px 2px 12px #000; max-width: 900px; margin-bottom: 100px; }
 
         .intro-text { padding: 60px 0 20px; text-align: justify; line-height: 1.8; font-size: 1.15rem; }
-        
         .servicios-grid { display: grid; grid-template-columns: 1fr 280px; gap: 50px; padding-bottom: 60px; }
         .div-tit { color: var(--oro-m); font-size: 1.6rem; font-weight: 700; margin: 45px 0 20px; border-left: 8px solid var(--azul); padding-left: 20px; text-transform: uppercase; }
         .srv-item { padding: 15px 0; border-bottom: 1px solid rgba(0,51,102,0.15); display: flex; align-items: center; font-size: 1.25rem; cursor: pointer; }
         .srv-item i { color: var(--oro-m); width: 45px; }
 
+        .img-container { width: 100%; text-align: center; margin: 40px 0; }
+        .img-container img { width: 100%; height: auto; border-top: 4px solid var(--oro-m); border-bottom: 4px solid var(--oro-m); filter: grayscale(100%); }
+
         .btn-float { position: fixed; bottom: 40px; right: 40px; background: var(--oro); color: var(--azul); width: 160px; height: 160px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; border: 6px solid var(--azul); z-index: 1000; box-shadow: 0 15px 40px rgba(0,0,0,0.5); text-decoration: none; font-size: 1.1rem; }
 
+        /* MODALES */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); overflow-y: auto; }
-        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; border: 4px solid var(--oro-m); width: 90%; max-width: 700px; color: var(--azul); }
+        .modal-content { background: var(--hueso); margin: 2% auto; padding: 30px; border: 4px solid var(--oro-m); width: 90%; max-width: 750px; color: var(--azul); }
         .modal-header { border-bottom: 2px solid var(--oro-m); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
         .close { font-size: 2.5rem; cursor: pointer; font-weight: bold; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; font-size: 0.85rem; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; font-family: 'Roboto'; box-sizing: border-box; }
-        .btn-gps { background: var(--azul); color: white; padding: 10px; border: none; margin-bottom: 10px; cursor: pointer; width: 100%; font-weight: bold; }
-        .btn-submit { background: var(--oro); color: var(--azul); font-weight: 700; padding: 15px; border: 2px solid var(--azul); width: 100%; cursor: pointer; font-size: 1.1rem; text-transform: uppercase; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; font-family: 'Roboto'; box-sizing: border-box; }
+        .btn-gps { background: var(--azul); color: white; padding: 12px; border: none; margin-bottom: 10px; cursor: pointer; width: 100%; font-weight: bold; }
+        .btn-submit { background: var(--oro); color: var(--azul); font-weight: 700; padding: 18px; border: 2px solid var(--azul); width: 100%; cursor: pointer; font-size: 1.2rem; text-transform: uppercase; }
         .cost-preview { background: #eee; padding: 15px; margin: 10px 0; border-left: 4px solid var(--azul); font-weight: bold; }
         .blindaje-box { font-size: 0.8rem; color: #444; background: #fffbe6; padding: 12px; border: 1px solid var(--oro-m); margin: 10px 0; line-height: 1.4; }
 
@@ -56,49 +50,90 @@
         .f-box h4 { color: var(--oro); text-transform: uppercase; border-bottom: 1px solid var(--oro-m); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; font-size: 1.3rem; }
         .f-box p { font-size: 1.1rem; line-height: 1.7; text-align: justify; }
         .contact-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; border-top: 1px solid #333; padding-top: 40px; font-size: 1.2rem; }
-        .contact-bar i { color: var(--oro); margin-right: 15px; }
     </style>
 </head>
 <body>
     <a href="https://wa.me/59162354424" class="btn-float">SOLICITAR<br>SERVICIO<br>AHORA</a>
-    
-    <div id="modalLimpieza" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: LIMPIEZA</h3><span class="close" onclick="cerrarModal('modalLimpieza')">&times;</span></div><form><div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div><div class="form-group"><label>CI / NIT</label><input type="text" required></div><button type="button" class="btn-gps">Obtener Ubicación Actual</button><div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div><div class="form-group"><label>Metraje (m2)</label><input type="number" required></div><div class="form-group"><label>Multimedia</label><input type="file" required></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
 
-    <div id="modalAncianos" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: ANCIANOS</h3><span class="close" onclick="cerrarModal('modalAncianos')">&times;</span></div><form><div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div><div class="form-group"><label>Cuadro de Salud / Alergias</label><textarea required></textarea></div><div class="form-group"><label>Contacto Emergencia</label><input type="tel" required></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
+    <div id="modalLimpieza" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>BRIEFING: LIMPIEZA</h3><span class="close" onclick="cerrarModal('modalLimpieza')">&times;</span></div>
+            <form>
+                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
+                <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
+                <div class="form-group"><label>Ubicación GPS</label><button type="button" class="btn-gps">Obtener Ubicación Actual</button><input type="url" placeholder="Link de Google Maps" required></div>
+                <div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div>
+                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
+                <div class="form-group"><label>Metraje (m2) *</label><input type="number" required></div>
+                <div class="form-group"><label>Tipo de Limpieza</label><select><option>General</option><option>Profunda</option><option>Post-Obra</option></select></div>
+                <div class="form-group"><label>Insumos</label><select><option>Cliente provee</option><option>Empresa provee</option></select></div>
+                <div class="form-group"><label>Multimedia *</label><input type="file" required></div>
+                <div class="form-group"><label>Inicio del Servicio</label><input type="datetime-local" required></div>
+                <button type="submit" class="btn-submit">Generar ID Único</button>
+            </form>
+        </div>
+    </div>
 
-    <div id="modalMascotas" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: MASCOTAS</h3><span class="close" onclick="cerrarModal('modalMascotas')">&times;</span></div><form oninput="total.value=parseInt(horas.value)*40"><div class="form-group"><label>Nombre Mascota</label><input type="text" required></div><div class="form-group"><label>Horas</label><input type="number" id="horas" value="1"></div><div class="cost-preview">Costo: <output name="total">40</output> Bs.</div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
+    <div id="modalAncianos" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>BRIEFING: CUIDADO DE ANCIANOS</h3><span class="close" onclick="cerrarModal('modalAncianos')">&times;</span></div>
+            <form>
+                <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
+                <div class="form-group"><label>Identificación del Asistido</label><input type="text" required></div>
+                <div class="form-group"><label>Nivel de Movilidad</label><select><option>Independiente</option><option>Movilidad Reducida</option><option>Encamado</option></select></div>
+                <div class="form-group"><label>Cuadro de Salud / Alergias *</label><textarea required></textarea></div>
+                <div class="form-group"><label>Contacto de Emergencia *</label><input type="tel" required></div>
+                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
+                <div class="form-group"><label>Ubicación Maps</label><input type="url" required></div>
+                <div class="form-group"><label>Inicio del Servicio</label><input type="datetime-local" required></div>
+                <button type="submit" class="btn-submit">Generar ID Único</button>
+            </form>
+        </div>
+    </div>
 
-    <div id="modalProtocolo" class="modal"><div class="modal-content"><div class="modal-header"><h3>BRIEFING: PROTOCOLO SOCIAL</h3><span class="close" onclick="cerrarModal('modalProtocolo')">&times;</span></div><form><div class="form-group"><label>Tipo de Evento</label><select><option>Corporativo</option><option>Gala</option><option>Acompañamiento Privado</option></select></div><div class="form-group"><label>Vestimenta</label><select><option>Formal</option><option>Gala</option></select></div><button type="submit" class="btn-submit">Generar ID Único</button></form></div></div>
+    <div id="modalMascotas" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>BRIEFING: MASCOTAS</h3><span class="close" onclick="cerrarModal('modalMascotas')">&times;</span></div>
+            <form oninput="rM.innerText = parseInt(hM.value)*40">
+                <div class="form-group"><label>Nombre Mascota / Raza</label><input type="text" required></div>
+                <div class="form-group"><label>Carácter</label><select multiple><option>Sociable</option><option>Nervioso</option><option>Agresivo</option></select></div>
+                <div class="form-group"><label>Ubicación Maps</label><input type="url" required></div>
+                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
+                <div class="form-group"><label>Estado Accesorios</label><input type="checkbox" required> Declaro accesorios en óptimo estado.</div>
+                <div class="form-group"><label>Duración (Horas)</label><input type="number" id="hM" value="1"></div>
+                <div class="cost-preview">Costo: <span id="rM">40</span> Bs.</div>
+                <button type="submit" class="btn-submit">Generar ID Único</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalProtocolo" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>BRIEFING: PROTOCOLO SOCIAL</h3><span class="close" onclick="cerrarModal('modalProtocolo')">&times;</span></div>
+            <form id="formProt">
+                <div class="form-group"><label>Tipo de Evento</label><select id="tEv" required><option value="">Seleccione...</option><option value="privado">Acompañamiento Privado</option><option>Corporativo</option></select></div>
+                <div class="form-group"><label>Código de Vestimenta</label><select onchange="document.getElementById('blV').style.display='block'"><option>Formal</option><option>Gala</option></select></div>
+                <div id="blV" class="blindaje-box" style="display:none;">S360 no se hace responsable por exclusión de acceso.</div>
+                <div class="blindaje-box">Servicio no incluye consumos ni entradas.</div>
+                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
+                <div class="form-group"><label>Inicio del Servicio</label><input type="datetime-local" required></div>
+                <button type="submit" class="btn-submit">Generar ID Único</button>
+            </form>
+        </div>
+    </div>
 
     <div id="modalConcierge" class="modal">
         <div class="modal-content">
             <div class="modal-header"><h3>BRIEFING: DIGITAL CONCIERGE</h3><span class="close" onclick="cerrarModal('modalConcierge')">&times;</span></div>
-            <form id="formConcierge" oninput="resC.innerText = parseInt(hC.value)*45">
+            <form oninput="rC.innerText = parseInt(hC.value)*45">
                 <div class="form-group"><label>Nombre / Razón Social</label><input type="text" required></div>
-                <div class="form-group"><label>CI / NIT</label><input type="text" required></div>
-                <div class="form-group"><label>Ubicación GPS</label>
-                    <button type="button" class="btn-gps" onclick="alert('Obteniendo...')">Obtener mi ubicación actual</button>
-                    <input type="url" placeholder="Link de Google Maps (Manual)" required>
-                </div>
-                <div class="form-group"><label>Dirección Detallada</label><textarea required></textarea></div>
-                <div class="form-group"><label>WhatsApp de Gestión</label><input type="tel" value="+591" required></div>
-                
-                <div class="form-group"><label>1. Dispositivo / Sistema</label>
-                    <div style="font-size:0.8rem;">
-                        <input type="checkbox"> Smartphone | <input type="checkbox"> Tablet | <input type="checkbox"> Computadora | <input type="checkbox"> Smart TV / Otros <input type="text" placeholder="Especifique">
-                    </div>
-                </div>
-                <div class="form-group"><label>2. Objetivo del Aprendizaje</label><textarea placeholder="Ej: Banca Móvil, WhatsApp..." required></textarea></div>
-                <div class="form-group"><label>3. Nivel del Usuario</label><select required><option>Básico</option><option>Intermedio</option><option>Avanzado</option></select></div>
-                <div class="form-group"><input type="checkbox" required> El cliente declara tener sus contraseñas a mano.</div>
-                <div class="form-group"><label>7. Inicio del Servicio</label><input type="datetime-local" required></div>
-                <div class="form-group"><label>8. Tiempo Solicitado (Horas)</label><input type="number" id="hC" value="1" min="1"></div>
-                
-                <div class="blindaje-box">
-                    <strong>Privacidad:</strong> S360 prohíbe al personal almacenar o fotografiar contraseñas.<br>
-                    <strong>Hardware:</strong> El servicio es de enseñanza; no incluye reparaciones físicas ni cambio de piezas.
-                </div>
-                <div class="cost-preview">Costo: <span id="resC">45</span> Bs.</div>
+                <div class="form-group"><label>Dispositivo</label><input type="text" placeholder="Android, iOS, PC" required></div>
+                <div class="form-group"><label>Objetivo de Aprendizaje</label><textarea required></textarea></div>
+                <div class="form-group"><label>WhatsApp Gestión</label><input type="tel" value="+591" required></div>
+                <div class="form-group"><input type="checkbox" required> Declaro tener contraseñas a mano.</div>
+                <div class="form-group"><label>Horas Solicitadas</label><input type="number" id="hC" value="1"></div>
+                <div class="blindaje-box"><strong>Privacidad:</strong> Prohibido almacenar contraseñas. <strong>Hardware:</strong> No incluye reparaciones físicas.</div>
+                <div class="cost-preview">Costo: <span id="rC">45</span> Bs.</div>
                 <button type="submit" class="btn-submit">Generar ID Único</button>
             </form>
         </div>
@@ -118,32 +153,41 @@
 
         <div class="servicios-grid">
             <div>
-                <div class="div-tit">Asistencia y Cuidado Personal</div>
+                <div class="div-tit">División 1: Asistencia</div>
                 <div class="srv-item" onclick="abrirModal('modalLimpieza')"><i class="fas fa-broom"></i>Limpieza</div>
                 <div class="srv-item" onclick="abrirModal('modalAncianos')"><i class="fas fa-user-nurse"></i>Cuidado de Ancianos</div>
                 <div class="srv-item" onclick="abrirModal('modalMascotas')"><i class="fas fa-paw"></i>Mascotas</div>
                 <div class="srv-item" onclick="abrirModal('modalProtocolo')"><i class="fas fa-glass-cheers"></i>Protocolo Social</div>
-                <div class="div-tit">Logística y Gestión de Tiempo</div>
+                <div class="div-tit">División 2: Logística</div>
                 <div class="srv-item" onclick="abrirModal('modalConcierge')"><i class="fas fa-tablet-alt"></i>Digital Concierge</div>
+                <div class="srv-item"><i class="fas fa-car"></i>Transporte Seguro</div>
             </div>
-            <aside style="background:rgba(0,0,0,0.05); height:400px; border:2px dashed var(--oro-m);"></aside>
+            <aside style="background:rgba(0,0,0,0.05); border:2px dashed var(--oro-m); margin-top:100px; height:500px; display:flex; align-items:center; justify-content:center; font-weight:700;">PUBLICIDAD</aside>
         </div>
+
+        <div class="img-container"><img src="https://i.ibb.co/PGwyf0KY/file-000000000a4c720ebfb48bcb331f258a.png"></div>
     </div>
 
     <footer>
         <div class="wrapper">
             <div class="f-grid">
                 <div class="f-box"><h4>MISIÓN</h4><p>Brindar soluciones integrales y confiables a hogares, negocios y personas...</p></div>
-                <div class="f-box"><h4>VISIÓN</h4><p>Ser la empresa de servicios más confiable, innovadora y completa de Bolivia...</p></div>
+                <div class="f-box"><h4>VISIÓN</h4><p>Ser la empresa de servicios más confiable de Bolivia...</p></div>
             </div>
-            <div class="contact-bar"><div><i class="fab fa-whatsapp"></i>+591 62354424</div><div><i class="fas fa-globe"></i>COBERTURA NACIONAL BOLIVIA</div></div>
+            <div class="contact-bar"><div><i class="fab fa-whatsapp"></i>+591 62354424</div><div><i class="fas fa-globe"></i>COBERTURA NACIONAL</div></div>
         </div>
     </footer>
 
     <script>
         function abrirModal(id) { document.getElementById(id).style.display = 'block'; }
         function cerrarModal(id) { document.getElementById(id).style.display = 'none'; }
-        window.onclick = function(e) { if(e.target.className === 'modal') e.target.style.display = 'none'; }
+        document.getElementById('formProt').onsubmit = function(e){
+            e.preventDefault();
+            let m = "ID: S360-PS" + Math.floor(Math.random()*999);
+            if(document.getElementById('tEv').value === 'privado') m += "\nRetorno Seguro Activado.";
+            alert(m);
+        }
     </script>
 </body>
 </html>
+ 
